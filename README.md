@@ -33,7 +33,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 - **CMS & Frameworks**:
 
   ![WordPress](https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
-  ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=for-the-badge&logo=wordpress&logoColor=white)
+  ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=for-the-badge&logo=Streamlit&logoColor=white)
 
 ### ✅ Conocimientos:
 - **Lenguajes**:
