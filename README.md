@@ -82,16 +82,20 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 ---
 
 ## 🔗 Encuéntrame en:
--  <a href="https://www.linkedin.com/in/césar-méndez-castro-a0b315310/" target="_blank">
+
+- <a href="https://www.linkedin.com/in/césar-méndez-castro-a0b315310/" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
   </a>
--  <a href="https://x.com/TsCesar19" target="_blank">
+  
+- <a href="https://x.com/TsCesar19" target="_blank">
     <img src="https://img.shields.io/badge/X-%23000000.svg?logo=X&logoColor=white" alt="X">
   </a>
--  <a href="https://www.instagram.com/cesar_ts._/" target="_blank">
+  
+- <a href="https://www.instagram.com/cesar_ts._/" target="_blank">
     <img src="https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white" alt="Instagram">
   </a>
--  <a href="mailto:cesarmencas19@gmail.com" target="_blank">
+  
+- <a href="mailto:cesarmencas19@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white" alt="Gmail">
   </a>
 
