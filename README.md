@@ -10,10 +10,10 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 
 ### 📘 Aprendiendo actualmente:
 - **Frontend**:
-    ***![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)***
+- ***![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)***
   <div>
     <ul textdecoration="none">
-      <li>img(https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)</li>
+      <li>![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)</li>
       <li>CSS</li>
       <li>JavaScript</li>
       <li>TypeScript</li>
