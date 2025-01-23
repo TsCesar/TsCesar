@@ -10,7 +10,19 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 
 ### 📘 Aprendiendo actualmente:
 - **Frontend**
-  HTML, CSS, JavaScript, TypeScript, ReactJS, Angular, VueJS, Astro
+  <div>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>TypeScript</li>
+      <li>ReactJS</li>
+      <li>Angular</li>
+      <li>VueJS</li>
+      <li>Astro</li>
+    </ul>
+  </div>
+  , , , , , , , 
 - **Backend**: Node.js, Django, SQL, Rust
 - **CMS & Frameworks**: WordPress, Streamlit
 
