@@ -33,7 +33,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 - **CMS & Frameworks**:
 
   ![WordPress](https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
-  ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
+  ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=for-the-badge&logo=wordpress&logoColor=white)
 
 ### ✅ Conocimientos:
 - **Lenguajes**:
@@ -98,5 +98,8 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 - <a href="mailto:cesarmencas19@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white" alt="Gmail">
   </a>
+- <a href="" target="_blank">
+    <img src="https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white" alt="Discord">
+  </a>
 
-> *¡Sigue aprendiendo, creciendo y desarrollando!*
+> *¡Sigo aprendiendo, creciendo y desarrollando!*
