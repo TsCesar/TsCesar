@@ -10,19 +10,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 
 ### 📘 Aprendiendo actualmente:
 - **Frontend**:
-- ***![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)***
-  <div>
-    <ul textdecoration="none">
-      <li>![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-      <li>TypeScript</li>
-      <li>ReactJS</li>
-      <li>Angular</li>
-      <li>VueJS</li>
-      <li>Astro</li>
-    </ul>
-  </div>
+- ***![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white), JavaScript, TypeScript, ReactJS, Angular, VueJS, Astro***
 - **Backend**:
   <div>
     <ul textdecoration="none">
