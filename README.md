@@ -98,6 +98,11 @@ Soy un joven estudiante de **19 años** con grandes ansias de aprender y mejorar
   </a>
 
 > *¡Sigo aprendiendo, creciendo y desarrollando!*
+<br>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif">
+<br>
 
 <div>
 <h1 align="center">Hello, I'm César, an enthusiastic developer!👋
