@@ -12,7 +12,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 - **Frontend**:
   <div>
     <ul textdecoration="none">
-      <li>HTML</li>
+      <li>[HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)</li>
       <li>CSS</li>
       <li>JavaScript</li>
       <li>TypeScript</li>
@@ -39,12 +39,22 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
     </ul>
   </div>
 
-  ---
-
 ### ✅ Conocimientos:
-- **Lenguajes**: Python
-- **Control de versiones**: Git
+- **Lenguajes**:
+  <div>
+    <ul>
+      <li>![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)</li>
+    </ul>
+  </div>
+- **Control de versiones**:
+  <div>
+    <ul>
+      <li>![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)</li>
+      <li>![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</li>
+    </ul>
+  </div>
 - **Terminales**: Linux, Windows, Windows Server
+- **Editores**:
 
   ---
 
@@ -64,7 +74,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 
 ---
 
-### 📊 Estadísticas de GitHub
+### <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="35"> Estadísticas de GitHub
 ![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=tuUsuario&show_icons=true&theme=radical)
 
 ---
@@ -72,6 +82,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 ## 🔗 Encuéntrame en:
 - [LinkedIn](https://www.linkedin.com/in/césar-méndez-castro-a0b315310/)
 - [Instagram](https://twitter.com/cesar_ts._/)
+- [Twitter](https://x.com/TsCesar19)
 - [GMAIL](mailto:cesarmencas19@gmail.com)
 
 > *¡Sigue aprendiendo, creciendo y desarrollando!*
