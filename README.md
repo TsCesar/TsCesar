@@ -19,39 +19,41 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
   ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
   ![VueJS](https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vue.js&logoColor=4FC08D)
   ![Astro](https://img.shields.io/badge/Astro-BC52EE?logo=astro&logoColor=fff&style=for-the-badge)
+  
 - **Backend**:
-  <div>
-    <ul textdecoration="none">
-      <li>Node.js</li>
-      <li>Django</li>
-      <li>SQL</li>
-      <li>Rust</li>
-    </ul>
-  </div>
+
+  ![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
+  ![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)
+  ![SQL](https://img.shields.io/badge/MySQL-00000F?style=for-the-badge&logo=mysql&logoColor=white)
+  ![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
+  
 - **CMS & Frameworks**:
-  <div>
-    <ul>
-      <li> WordPress</li>
-      <li>Streamlit</li>
-    </ul>
-  </div>
+
+  ![WordPress](https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white)
+  ![Streamlit](https://img.shields.io/badge/-Streamlit-FF4B4B?style=flat&logo=streamlit&logoColor=white)
 
 ### ✅ Conocimientos:
 - **Lenguajes**:
-  <div>
-    <ul>
-      <li>![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)</li>
-    </ul>
-  </div>
+
+  ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  
 - **Control de versiones**:
-  <div>
-    <ul>
-      <li>![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)</li>
-      <li>![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)</li>
-    </ul>
-  </div>
-- **Terminales**: Linux, Windows, Windows Server
+
+  ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+  ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+
+- **Terminales**:
+
+  ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+  ![Windows](https://img.shields.io/badge/windows%20terminal-4D4D4D?style=for-the-badge&logo=windows%20terminal&logoColor=white)
 - **Editores**:
+
+  ![Visual Studio Code](https://custom-icon-badges.demolab.com/badge/Visual%20Studio%20Code-0078d7.svg?logo=vsc&logoColor=white)
+  ![Eclipse](https://img.shields.io/badge/Eclipse-FE7A16.svg?logo=Eclipse&logoColor=white)
+  ![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)
+  ![NetBeans IDE](https://img.shields.io/badge/NetBeans%20IDE-1B6AC6.svg?logo=apache-netbeans-ide&logoColor=white)
+  ![PyCharm](https://img.shields.io/badge/PyCharm-000?logo=pycharm&logoColor=fff)
+  ![Sublime Text](https://img.shields.io/badge/Sublime%20Text-%23575757.svg?logo=sublime-text&logoColor=important)
 
   ---
 
@@ -77,7 +79,10 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 ---
 
 ## 🔗 Encuéntrame en:
-- [LinkedIn](https://www.linkedin.com/in/césar-méndez-castro-a0b315310/)
+-  <a href="https://www.linkedin.com/in/césar-méndez-castro-a0b315310/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+
 - [Instagram](https://twitter.com/cesar_ts._/)
 - [Twitter](https://x.com/TsCesar19)
 - [GMAIL](mailto:cesarmencas19@gmail.com)
