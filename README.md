@@ -160,8 +160,8 @@ I am a young 19-year-old student with a great desire to learn and improve my ski
   ---
 
 ## 💬 Languages:
-- Español (nativo)
-- Inglés (intermedio-avanzado)
+- Spanish (native)
+- English (intermediate-advanced)
 
   ---
 
