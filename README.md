@@ -12,7 +12,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 - **Frontend**:
   <div>
     <ul textdecoration="none">
-      <li>[HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)</li>
+      <li>img(https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)</li>
       <li>CSS</li>
       <li>JavaScript</li>
       <li>TypeScript</li>
