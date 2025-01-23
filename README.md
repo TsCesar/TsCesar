@@ -98,9 +98,5 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 - <a href="mailto:cesarmencas19@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?logo=gmail&logoColor=white" alt="Gmail">
   </a>
-- <a href="" target="_blank">
-    <img src="https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white" alt="Discord">
-    <p>cesar_ts._</p>
-  </a>
 
 > *¡Sigo aprendiendo, creciendo y desarrollando!*
