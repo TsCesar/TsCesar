@@ -2,7 +2,7 @@
 <h1 align="center">¡Hola, soy César un desarrollador entusiasta!👋
 </div>
 <p align="center">
-  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=cyan&size=25&center=true&vCenter=true&width=600&height=100&lines=Buenas+soy+César;++;Estudiante+y+desarrollador;Abierto+a+aprender+cosas+nuevas"></a>
+  <a href="https://github.com/DenverCoder1/readme-typing-svg"><img src="https://readme-typing-svg.herokuapp.com?font=Time+New+Roman&color=cyan&size=25&center=true&vCenter=true&width=600&height=100&lines=Buenas+soy+César;Estudiante+y+desarrollador;Abierto+a+aprender+cosas+nuevas"></a>
 </p>
 
 Soy un joven estudiante de **19 años** con grandes ansias de aprender y mejorar mis habilidades como desarrollador. Actualmente, estoy cursando un máster en **Full Stack Developer** en [*ConquerBlocks*](https://www.conquerblocks.com)![Logo](https://cdn.prod.website-files.com/63c2c7b1f3d9c51c32335fb0/66470384c9a7bdda4397bd18_Favicon-CB32x32.png), y una FP Superior de **DAM** en el centro [*María Auxiliadora*](https://leoncma.salesianas.org)![Logo](https://leoncma.salesianas.org/wp-content/uploads/2019/06/cropped-favicon-salesianas-32x32.png). Durante este camino, estoy aprendiendo y profundizando en una amplia variedad de tecnologías para prepararme como un profesional completo en el desarrollo web y de aplicaciones.
