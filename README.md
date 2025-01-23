@@ -6,12 +6,12 @@ Soy un joven estudiante de **19 años** con grandes ansias de aprender y mejorar
 
 Además de mi enfoque académico y técnico, soy una persona apasionada por el aprendizaje constante, los coches, disfrutar de tiempo con amigos, la creación de programas útiles, el gimnasio y el desarrollo personal.
 
-## 🌐 Habilidades y Tecnologías
+## <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"> Habilidades y Tecnologías
 
 ### 📘 Aprendiendo actualmente:
-- **Frontend**
+- **Frontend**:
   <div>
-    <ul>
+    <ul textdecoration="none">
       <li>HTML</li>
       <li>CSS</li>
       <li>JavaScript</li>
@@ -22,18 +22,37 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
       <li>Astro</li>
     </ul>
   </div>
-  , , , , , , , 
-- **Backend**: Node.js, Django, SQL, Rust
-- **CMS & Frameworks**: WordPress, Streamlit
+- **Backend**:
+  <div>
+    <ul textdecoration="none">
+      <li>Node.js</li>
+      <li>Django</li>
+      <li>SQL</li>
+      <li>Rust</li>
+    </ul>
+  </div>
+- **CMS & Frameworks**:
+  <div>
+    <ul>
+      <li> WordPress</li>
+      <li>Streamlit</li>
+    </ul>
+  </div>
 
-### ✅ Ya aprendí:
+  ---
+
+### ✅ Conocimientos:
 - **Lenguajes**: Python
 - **Control de versiones**: Git
 - **Terminales**: Linux, Windows, Windows Server
 
+  ---
+
 ## 💬 Idiomas
 - Español (nativo)
 - Inglés (intermedio-avanzado)
+
+  ---
 
 ## 🌱 Un poco más sobre mí
 - 🔧 En aprendizaje constante
@@ -52,7 +71,7 @@ Además de mi enfoque académico y técnico, soy una persona apasionada por el a
 
 ## 🔗 Encuéntrame en:
 - [LinkedIn](https://www.linkedin.com/in/césar-méndez-castro-a0b315310/)
-- [Twitter](https://twitter.com/tuUsuario)
-- [GMAIL](cesarmencas19@gmail.com)
+- [Instagram](https://twitter.com/cesar_ts._/)
+- [GMAIL](mailto:cesarmencas19@gmail.com)
 
 > *¡Sigue aprendiendo, creciendo y desarrollando!*
