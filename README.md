@@ -12,7 +12,6 @@ Soy un joven estudiante de **19 años** con grandes ansias de aprender y mejorar
 ### 📘 Aprendiendo actualmente:
 - **Frontend**:
   
-  ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -38,6 +37,7 @@ Soy un joven estudiante de **19 años** con grandes ansias de aprender y mejorar
 - **Lenguajes de programación**:
 
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
   
 - **Control de versiones**:
 
@@ -119,7 +119,6 @@ I am a young 19-year-old student with a great desire to learn and improve my ski
 ### 📘 Currently learning:
 - **Frontend**:
   
-  ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
   ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
   ![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
@@ -145,6 +144,7 @@ I am a young 19-year-old student with a great desire to learn and improve my ski
 - **programming languages**:
 
   ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+  ![HTML](https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white)
   
 - **Version control**:
 
