@@ -76,7 +76,7 @@ Soy un joven estudiante de **19 años** con grandes ansias de aprender y mejorar
 ---
 
 ### <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="35"> Estadísticas de GitHub
-![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=tuUsuario&show_icons=true&theme=radical)
+![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=TsCesar&show_icons=true&theme=radical)
 
 ---
 
@@ -183,7 +183,7 @@ I am a young 19-year-old student with a great desire to learn and improve my ski
 ---
 
 ### <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="35"> GitHub Statistics
-![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=tuUsuario&show_icons=true&theme=radical)
+![Estadísticas de GitHub](https://github-readme-stats.vercel.app/api?username=TsCesar&show_icons=true&theme=radical)
 
 ---
 
