@@ -244,17 +244,46 @@ Working with real business applications and data has made me methodical: underst
 
 <div align="center">
 
-<a href="https://github.com/TsCesar/DAM2"><img src="https://img.shields.io/badge/DAM2-Java%20coursework%20%26%20solutions-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="DAM2"></a>
-<br><br>
-<a href="https://github.com/TsCesar/ArcadePong"><img src="https://img.shields.io/badge/ArcadePong-Python%20arcade%20game-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="ArcadePong"></a>
-<br><br>
-<a href="https://github.com/TsCesar/Tetris"><img src="https://img.shields.io/badge/Tetris-Classic%20game%20recreation-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tetris"></a>
-<br><br>
-<a href="https://github.com/TsCesar/Texto_a_voz.py"><img src="https://img.shields.io/badge/Texto__a__voz.py-Text%20to%20speech%20utility-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Texto a voz"></a>
+<a href="https://github.com/TsCesar/TFG-BBDD-TRUCKS">
+  <img src="https://img.shields.io/badge/TFG--BBDD--TRUCKS-DAM%20final%20project%20database-0EA5E9?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A" alt="TFG-BBDD-TRUCKS">
+</a>
 
 <br><br>
 
-<a href="https://github.com/TsCesar?tab=repositories"><img src="https://img.shields.io/badge/VIEW%20ALL%20REPOSITORIES-0EA5E9?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A" alt="All repositories"></a>
+<a href="https://github.com/TsCesar/PSP-TRUCKS">
+  <img src="https://img.shields.io/badge/PSP--TRUCKS-Python%20%C2%B7%20TLS%20%C2%B7%20RBAC-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=0F172A" alt="PSP-TRUCKS">
+</a>
+
+<br><br>
+
+<a href="https://github.com/TsCesar/ArcadePong">
+  <img src="https://img.shields.io/badge/ArcadePong-Python%20arcade%20game-8B5CF6?style=for-the-badge&logo=python&logoColor=white&labelColor=2E1065" alt="ArcadePong">
+</a>
+
+<br><br>
+
+<table>
+<tr>
+<td width="33%" align="center">
+<b>🗄️ TFG-BBDD-TRUCKS</b><br><br>
+Database project developed for my DAM final project.
+</td>
+<td width="33%" align="center">
+<b>🔐 PSP-TRUCKS</b><br><br>
+Python client-server system using TLS, secure authentication, session management and RBAC.
+</td>
+<td width="33%" align="center">
+<b>🎮 ArcadePong</b><br><br>
+Arcade-style Pong project developed in Python.
+</td>
+</tr>
+</table>
+
+<br>
+
+<a href="https://github.com/TsCesar?tab=repositories">
+  <img src="https://img.shields.io/badge/VIEW%20ALL%20REPOSITORIES-0EA5E9?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A" alt="All repositories">
+</a>
 
 </div>
 <p align="center">
