@@ -244,17 +244,46 @@ Trabajar con aplicaciones y datos empresariales reales me ha hecho más metódic
 
 <div align="center">
 
-<a href="https://github.com/TsCesar/DAM2"><img src="https://img.shields.io/badge/DAM2-Java%20coursework%20%26%20solutions-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white" alt="DAM2"></a>
-<br><br>
-<a href="https://github.com/TsCesar/ArcadePong"><img src="https://img.shields.io/badge/ArcadePong-Python%20arcade%20game-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="ArcadePong"></a>
-<br><br>
-<a href="https://github.com/TsCesar/Tetris"><img src="https://img.shields.io/badge/Tetris-Classic%20game%20recreation-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Tetris"></a>
-<br><br>
-<a href="https://github.com/TsCesar/Texto_a_voz.py"><img src="https://img.shields.io/badge/Texto__a__voz.py-Text%20to%20speech%20utility-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Texto a voz"></a>
+<a href="https://github.com/TsCesar/TFG-BBDD-TRUCKS">
+  <img src="https://img.shields.io/badge/TFG--BBDD--TRUCKS-Base%20de%20datos%20del%20TFG-0EA5E9?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A" alt="TFG-BBDD-TRUCKS">
+</a>
 
 <br><br>
 
-<a href="https://github.com/TsCesar?tab=repositories"><img src="https://img.shields.io/badge/VER%20TODOS%20LOS%20REPOSITORIOS-0EA5E9?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A" alt="All repositories"></a>
+<a href="https://github.com/TsCesar/PSP-TRUCKS">
+  <img src="https://img.shields.io/badge/PSP--TRUCKS-Python%20%C2%B7%20TLS%20%C2%B7%20RBAC-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=0F172A" alt="PSP-TRUCKS">
+</a>
+
+<br><br>
+
+<a href="https://github.com/TsCesar/ArcadePong">
+  <img src="https://img.shields.io/badge/ArcadePong-Juego%20arcade%20en%20Python-8B5CF6?style=for-the-badge&logo=python&logoColor=white&labelColor=2E1065" alt="ArcadePong">
+</a>
+
+<br><br>
+
+<table>
+<tr>
+<td width="33%" align="center">
+<b>🗄️ TFG-BBDD-TRUCKS</b><br><br>
+Base de datos desarrollada para el TFG del Grado Superior de DAM.
+</td>
+<td width="33%" align="center">
+<b>🔐 PSP-TRUCKS</b><br><br>
+Sistema cliente-servidor en Python con TLS, autenticación segura, gestión de sesiones y control de acceso por roles (RBAC).
+</td>
+<td width="33%" align="center">
+<b>🎮 ArcadePong</b><br><br>
+Proyecto estilo Pong arcade desarrollado en Python.
+</td>
+</tr>
+</table>
+
+<br>
+
+<a href="https://github.com/TsCesar?tab=repositories">
+  <img src="https://img.shields.io/badge/VER%20TODOS%20LOS%20REPOSITORIOS-0EA5E9?style=for-the-badge&logo=github&logoColor=white&labelColor=0F172A" alt="Todos los repositorios">
+</a>
 
 </div>
 <p align="center">
@@ -287,10 +316,6 @@ Trabajar con aplicaciones y datos empresariales reales me ha hecho más metódic
 
 <br><br>
 
-<div align="center">
-<img src="https://img.shields.io/badge/SNAKE-Ejecuta%20GitHub%20Action%20una%20vez-F59E0B?style=for-the-badge&logo=githubactions&logoColor=white" alt="Estado snake">
-</div>
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/TsCesar/TsCesar/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/TsCesar/TsCesar/output/github-contribution-grid-snake.svg">
@@ -299,7 +324,7 @@ Trabajar con aplicaciones y datos empresariales reales me ha hecho más metódic
 
 </div>
 
-Nota: la serpiente aparecerá después de ejecutar una vez el GitHub Action incluido.
+🐍 Activación: después de subir .github/workflows/snake.yml, ejecuta una vez Actions → Generate contribution snake → Run workflow. Después la animación cargará automáticamente desde la rama output.
 
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" alt="animated divider">
