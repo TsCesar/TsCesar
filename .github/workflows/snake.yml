@@ -1,16 +1,14 @@
 name: Generate contribution snake
 
 on:
+  push:
+    branches-ignore:
+      - output
+
   workflow_dispatch:
+
   schedule:
     - cron: "17 4 * * *"
-  push:
-    branches:
-      - main
-    paths:
-      - ".github/workflows/snake.yml"
-      - "README.md"
-      - "README.es.md"
 
 permissions:
   contents: write
@@ -25,7 +23,7 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - name: Generate contribution snake SVGs
+      - name: Generate snake SVGs
         uses: Platane/snk/svg-only@v3
         with:
           github_user_name: ${{ github.repository_owner }}
@@ -33,18 +31,16 @@ jobs:
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
 
-      - name: Verify generated SVGs
+      - name: Validate generated files
         shell: bash
         run: |
-          ls -lh dist
           test -s dist/github-contribution-grid-snake.svg
           test -s dist/github-contribution-grid-snake-dark.svg
 
-      - name: Publish SVGs to output branch
+      - name: Publish to output branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: output
           publish_dir: ./dist
           force_orphan: true
-          enable_jekyll: false
