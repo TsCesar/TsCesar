@@ -2,135 +2,635 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>César Méndez Castro · Tech Stack</title>
-<style>
-:root{--bg:#020617;--panel:rgba(15,23,42,.72);--line:rgba(148,163,184,.16);--text:#f8fafc;--muted:#94a3b8;--cyan:#38bdf8;--purple:#a78bfa;--pink:#f472b6}
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:
-radial-gradient(circle at 15% 10%,rgba(14,165,233,.20),transparent 35%),
-radial-gradient(circle at 85% 20%,rgba(139,92,246,.18),transparent 35%),
-radial-gradient(circle at 50% 90%,rgba(236,72,153,.14),transparent 38%),var(--bg);
-color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow-x:hidden}
-.bg{position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(to bottom,black,transparent)}
-.wrap{width:min(1180px,92vw);margin:auto;padding:64px 0 80px}
-.hero{text-align:center;margin-bottom:44px}
-h1{font-size:clamp(2.6rem,6vw,5.2rem);line-height:.95;margin:0 0 16px;letter-spacing:-.05em;background:linear-gradient(90deg,#fff,#7dd3fc,#c4b5fd,#f9a8d4);-webkit-background-clip:text;color:transparent;background-size:200% auto;animation:shine 5s linear infinite}
-.lead{max-width:760px;margin:auto;color:#cbd5e1;font-size:1.08rem;line-height:1.75}
-.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:25px}
-.btn{text-decoration:none;color:white;padding:11px 16px;border-radius:12px;border:1px solid var(--line);background:rgba(15,23,42,.78);transition:.25s ease}
-.btn:hover{transform:translateY(-3px);border-color:#38bdf8;box-shadow:0 12px 36px rgba(56,189,248,.18)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;perspective:1200px}
-.tech-card{position:relative;min-height:210px;padding:26px 20px;border:1px solid var(--line);background:linear-gradient(145deg,rgba(15,23,42,.83),rgba(2,6,23,.72));border-radius:22px;text-align:center;transform-style:preserve-3d;transition:transform .18s ease,border-color .25s ease,box-shadow .25s ease;overflow:hidden}
-.tech-card::before{content:"";position:absolute;inset:-80%;background:radial-gradient(circle,var(--accent,rgba(56,189,248,.25)),transparent 45%);opacity:0;transition:.35s;transform:translateZ(-1px)}
-.tech-card:hover::before{opacity:.25}
-.tech-card:hover{border-color:var(--accent,#38bdf8);box-shadow:0 18px 50px color-mix(in srgb,var(--accent,#38bdf8) 23%,transparent)}
-.icon-wrap{width:82px;height:82px;margin:0 auto 18px;border-radius:22px;display:grid;place-items:center;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08);transition:.3s}
-.tech-card:hover .icon-wrap{transform:translateY(-7px) scale(1.08) rotate(-2deg);box-shadow:0 0 38px color-mix(in srgb,var(--accent,#38bdf8) 30%,transparent)}
-.icon-wrap img{width:54px;height:54px;object-fit:contain;filter:drop-shadow(0 8px 13px rgba(0,0,0,.28));transition:.25s}
-.tech-card:hover img{transform:rotate(4deg) scale(1.08)}
-.tech-card h3{margin:0 0 7px;font-size:1.04rem} .tech-card p{margin:0;color:var(--muted);font-size:.88rem}
-.note{margin:35px auto 0;max-width:820px;padding:16px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(15,23,42,.55);color:#94a3b8;text-align:center}
-@keyframes shine{to{background-position:200% center}}
-@media(max-width:600px){.wrap{padding-top:36px}.grid{grid-template-columns:repeat(2,1fr);gap:10px}.tech-card{min-height:175px;padding:20px 10px}.icon-wrap{width:64px;height:64px}.icon-wrap img{width:44px;height:44px}}
-</style>
-</head>
-<body>
-<div class="bg"></div>
-<main class="wrap">
-<section class="hero">
-<h1>César Méndez Castro</h1>
-<p class="lead">Junior Software Developer focused on Java, Kotlin and backend engineering — with experience in enterprise application support, databases, Android, DevOps, Unreal Engine and blockchain.</p>
-<div class="actions">
-<a class="btn" href="https://github.com/TsCesar">← GitHub</a>
-<a class="btn" href="https://www.linkedin.com/in/c%C3%A9sar-m%C3%A9ndez-castro-a0b315310/">LinkedIn</a>
-<a class="btn" href="mailto:cesarmencas19@gmail.com">Email</a>
-</div>
-</section>
-<section class="grid"><article class="tech-card" data-accent="#f59e0b">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
-  <h3>Java</h3><p>Backend / OOP</p>
-</article>
-<article class="tech-card" data-accent="#8b5cf6">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kotlin/kotlin-original.svg" alt="Kotlin"></div>
-  <h3>Kotlin</h3><p>Android / JVM</p>
-</article>
-<article class="tech-card" data-accent="#22c55e">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" alt="Spring Boot"></div>
-  <h3>Spring Boot</h3><p>Backend</p>
-</article>
-<article class="tech-card" data-accent="#3776ab">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
-  <h3>Python</h3><p>Programming</p>
-</article>
-<article class="tech-card" data-accent="#f7df1e">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
-  <h3>JavaScript</h3><p>Web</p>
-</article>
-<article class="tech-card" data-accent="#3178c6">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
-  <h3>TypeScript</h3><p>Web</p>
-</article>
-<article class="tech-card" data-accent="#4479a1">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL"></div>
-  <h3>MySQL</h3><p>Database</p>
-</article>
-<article class="tech-card" data-accent="#0f80cc">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqlite/sqlite-original.svg" alt="SQLite"></div>
-  <h3>SQLite</h3><p>Database</p>
-</article>
-<article class="tech-card" data-accent="#2496ed">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg" alt="Docker"></div>
-  <h3>Docker</h3><p>DevOps</p>
-</article>
-<article class="tech-card" data-accent="#f05032">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"></div>
-  <h3>Git</h3><p>Version Control</p>
-</article>
-<article class="tech-card" data-accent="#e5e7eb">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"></div>
-  <h3>GitHub</h3><p>Version Control</p>
-</article>
-<article class="tech-card" data-accent="#02303a">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gradle/gradle-original.svg" alt="Gradle"></div>
-  <h3>Gradle</h3><p>Build</p>
-</article>
-<article class="tech-card" data-accent="#c71a36">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg" alt="Maven"></div>
-  <h3>Maven</h3><p>Build</p>
-</article>
-<article class="tech-card" data-accent="#3ddc84">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg" alt="Android"></div>
-  <h3>Android</h3><p>Mobile</p>
-</article>
-<article class="tech-card" data-accent="#ec4899">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/intellij/intellij-original.svg" alt="IntelliJ"></div>
-  <h3>IntelliJ</h3><p>IDE</p>
-</article>
-<article class="tech-card" data-accent="#007acc">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code"></div>
-  <h3>VS Code</h3><p>IDE</p>
-</article>
-<article class="tech-card" data-accent="#94a3b8">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/unrealengine/unrealengine-original.svg" alt="Unreal Engine"></div>
-  <h3>Unreal Engine</h3><p>Game Dev</p>
-</article>
-<article class="tech-card" data-accent="#64748b">
-  <div class="icon-wrap"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/solidity/solidity-original.svg" alt="Solidity"></div>
-  <h3>Solidity</h3><p>Blockchain</p>
-</article></section>
-<p class="note">Move the pointer over the cards to explore the stack.</p>
-</main>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>César Méndez Castro · Junior Software Developer</title>
+<meta name="description" content="Portfolio of César Méndez Castro — Junior Software Developer based in León, Spain. Java, Kotlin and backend engineering, with professional experience in enterprise application support, SQL and DBF/XBase data.">
+<meta name="author" content="César Méndez Castro">
+<meta name="theme-color" content="#04070f">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://tscesar.github.io/TsCesar/">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="César Méndez Castro">
+<meta property="og:title" content="César Méndez Castro · Junior Software Developer">
+<meta property="og:description" content="Java · Kotlin · Backend · SQL · Android · Docker · Software Engineering">
+<meta property="og:url" content="https://tscesar.github.io/TsCesar/">
+<meta property="og:image" content="https://tscesar.github.io/TsCesar/assets/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="César Méndez Castro — Junior Software Developer. Java, Kotlin, Backend.">
+<meta property="og:locale" content="en_GB">
+<meta property="og:locale:alternate" content="es_ES">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="César Méndez Castro · Junior Software Developer">
+<meta name="twitter:description" content="Java · Kotlin · Backend · SQL · Android · Docker · Software Engineering">
+<meta name="twitter:image" content="https://tscesar.github.io/TsCesar/assets/img/og-image.png">
+
+<link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/img/apple-touch-icon.png">
+<link rel="manifest" href="./site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="dns-prefetch" href="https://api.github.com">
+<link rel="preload" as="image" href="./assets/img/profile.webp" fetchpriority="high">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&amp;family=JetBrains+Mono:wght@400..700&amp;family=Space+Grotesk:wght@500..700&amp;display=swap">
+<link rel="stylesheet" href="./css/base.css">
+<link rel="stylesheet" href="./css/layout.css">
+<link rel="stylesheet" href="./css/components.css">
+<link rel="stylesheet" href="./css/animations.css">
+<link rel="stylesheet" href="./css/responsive.css">
+
 <script>
-document.querySelectorAll('.tech-card').forEach(card=>{
-  card.style.setProperty('--accent', card.dataset.accent);
-  card.addEventListener('mousemove',e=>{
-    const r=card.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
-    const rx=((y/r.height)-.5)*-10, ry=((x/r.width)-.5)*12;
-    card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg) translateY(-5px)`;
-  });
-  card.addEventListener('mouseleave',()=>card.style.transform='');
-});
+  /* Set the JS flag and the language before first paint to avoid a flash. */
+  document.documentElement.classList.add('js');
+  try {
+    var l = localStorage.getItem('portfolio-lang');
+    if (l !== 'es' && l !== 'en') l = (navigator.language || 'en').toLowerCase().indexOf('es') === 0 ? 'es' : 'en';
+    document.documentElement.lang = l;
+  } catch (e) { /* private mode: keep the default */ }
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "César Méndez Castro",
+  "url": "https://tscesar.github.io/TsCesar/",
+  "image": "https://tscesar.github.io/TsCesar/assets/img/profile.webp",
+  "jobTitle": "Junior Software Developer",
+  "email": "mailto:cesarmencas19@gmail.com",
+  "address": { "@type": "PostalAddress", "addressLocality": "León", "addressCountry": "ES" },
+  "worksFor": { "@type": "Organization", "name": "Proconsi" },
+  "alumniOf": { "@type": "EducationalOrganization", "name": "María Auxiliadora" },
+  "knowsAbout": ["Java", "Kotlin", "Spring Boot", "SQL", "MySQL", "Android", "Docker", "Python", "Relational databases"],
+  "sameAs": [
+    "https://github.com/TsCesar",
+    "https://www.linkedin.com/in/c%C3%A9sar-m%C3%A9ndez-castro-a0b315310/"
+  ]
+}
+</script>
+</head>
+
+<body>
+<a class="skip-link" href="#main" data-i18n="a11y.skip">Skip to main content</a>
+
+<div class="scroll-progress" aria-hidden="true"><span data-progress-bar></span></div>
+
+<canvas id="bg-canvas" aria-hidden="true"></canvas>
+<div class="cursor-glow" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="site-header" id="top">
+  <nav class="navbar container" aria-label="Primary">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true">&lt;CM/&gt;</span>
+      <span class="brand-text">César Méndez</span>
+      <span class="sr-only" data-i18n="a11y.home">Back to top</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-panel" data-nav-toggle>
+      <span class="nav-toggle-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="sr-only" data-i18n="a11y.menu">Open navigation menu</span>
+    </button>
+
+    <div class="nav-panel" id="nav-panel">
+      <ul class="nav-links">
+        <li><a href="#about"><span class="nav-idx" aria-hidden="true">01</span><span data-i18n="nav.about">About</span></a></li>
+        <li><a href="#stack"><span class="nav-idx" aria-hidden="true">02</span><span data-i18n="nav.stack">Stack</span></a></li>
+        <li><a href="#experience"><span class="nav-idx" aria-hidden="true">03</span><span data-i18n="nav.experience">Experience</span></a></li>
+        <li><a href="#projects"><span class="nav-idx" aria-hidden="true">04</span><span data-i18n="nav.projects">Projects</span></a></li>
+        <li><a href="#learning"><span class="nav-idx" aria-hidden="true">05</span><span data-i18n="nav.learning">Learning</span></a></li>
+        <li><a href="#contact"><span class="nav-idx" aria-hidden="true">06</span><span data-i18n="nav.contact">Contact</span></a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="palette-hint" type="button" data-palette-open>
+          <span aria-hidden="true">⌘</span><span class="palette-hint-key" aria-hidden="true">K</span>
+          <span class="sr-only" data-i18n="a11y.palette">Open the command palette</span>
+        </button>
+
+        <button class="lang-switch" type="button" data-lang-toggle>
+          <span class="lang-opt" data-lang-en>EN</span>
+          <span class="lang-sep" aria-hidden="true">/</span>
+          <span class="lang-opt" data-lang-es>ES</span>
+          <span class="sr-only" data-i18n="a11y.lang">Switch language</span>
+        </button>
+
+        <a class="icon-button" href="https://github.com/TsCesar" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 .7a11.5 11.5 0 0 0-3.64 22.4c.58.11.79-.25.79-.56v-2.23c-3.22.7-3.9-1.36-3.9-1.36-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.17.08 1.78 1.2 1.78 1.2 1.04 1.78 2.72 1.27 3.38.97.1-.75.4-1.27.74-1.56-2.57-.3-5.28-1.29-5.28-5.73 0-1.27.45-2.3 1.2-3.12-.12-.3-.52-1.48.11-3.08 0 0 .98-.31 3.17 1.19a11 11 0 0 1 5.77 0c2.2-1.5 3.17-1.19 3.17-1.19.63 1.6.23 2.78.11 3.08.75.82 1.2 1.85 1.2 3.12 0 4.45-2.72 5.43-5.3 5.72.42.36.79 1.07.79 2.16v3.2c0 .31.21.68.8.56A11.5 11.5 0 0 0 12 .7Z"/></svg>
+          <span class="sr-only">GitHub</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-grid-floor" aria-hidden="true"></div>
+    <div class="aurora aurora-1" data-parallax="0.05" aria-hidden="true"></div>
+    <div class="aurora aurora-2" data-parallax="0.09" aria-hidden="true"></div>
+    <div class="aurora aurora-3" data-parallax="0.03" aria-hidden="true"></div>
+
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="availability reveal" data-reveal-delay="0">
+          <span class="availability-dot" aria-hidden="true"></span>
+          <span data-i18n="hero.available">Open to Junior Software Developer opportunities</span>
+        </p>
+
+        <p class="eyebrow reveal" data-reveal-delay="1" data-i18n="hero.eyebrow">Junior Software Developer · León, Spain</p>
+
+        <h1 id="hero-title" class="hero-title">
+          <span class="hero-hello reveal" data-reveal-delay="2" data-i18n="hero.hello">Hi, I'm</span>
+          <span class="hero-name gradient-text reveal" data-reveal-delay="3" data-i18n="hero.name">César Méndez Castro</span>
+        </h1>
+
+        <p class="hero-terminal reveal" data-reveal-delay="4">
+          <span class="prompt" aria-hidden="true">~/portfolio $</span>
+          <span class="typing" data-typing aria-hidden="true"></span>
+          <span class="caret" aria-hidden="true"></span>
+          <span class="sr-only" data-i18n="hero.roleStatic">Junior Software Developer specialised in Java, Kotlin and backend development.</span>
+        </p>
+
+        <p class="hero-description reveal" data-reveal-delay="5" data-i18n="hero.description">
+          Higher Technician in Multiplatform Application Development (DAM) with professional experience supporting enterprise software, working with SQL and DBF/XBase data, and a development focus on Java, Kotlin and backend engineering.
+        </p>
+
+        <div class="hero-actions reveal" data-reveal-delay="6">
+          <a class="button button-primary magnetic" href="#projects">
+            <span data-i18n="hero.projects">Explore projects</span>
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a class="button button-ghost magnetic" href="./assets/cv/CV_CesarMendez_EN.pdf" data-cv-link download>
+            <span data-i18n="hero.cv">Download CV</span>
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
+          </a>
+        </div>
+
+        <ul class="hero-facts reveal" data-reveal-delay="7">
+          <li><span class="hero-fact-key" data-i18n="hero.factEdu">Education</span><span class="hero-fact-val" data-i18n="hero.factEduVal">DAM · Completed</span></li>
+          <li><span class="hero-fact-key" data-i18n="hero.factWork">Currently</span><span class="hero-fact-val">Proconsi</span></li>
+          <li><span class="hero-fact-key" data-i18n="hero.factFocus">Focus</span><span class="hero-fact-val">Java · Kotlin · Backend</span></li>
+          <li><span class="hero-fact-key" data-i18n="hero.factLoc">Based in</span><span class="hero-fact-val" data-i18n="hero.factLocVal">León, Spain</span></li>
+        </ul>
+
+        <p class="hero-socials reveal" data-reveal-delay="8">
+          <a href="https://github.com/TsCesar" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://www.linkedin.com/in/c%C3%A9sar-m%C3%A9ndez-castro-a0b315310/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <span aria-hidden="true">·</span>
+          <a href="mailto:cesarmencas19@gmail.com">cesarmencas19@gmail.com</a>
+        </p>
+      </div>
+
+      <div class="hero-visual reveal" data-reveal-delay="3">
+        <div class="portrait" data-tilt data-tilt-strength="6" data-parallax="0.04">
+          <span class="portrait-ring portrait-ring-1" aria-hidden="true"></span>
+          <span class="portrait-ring portrait-ring-2" aria-hidden="true"></span>
+          <span class="portrait-halo" aria-hidden="true"></span>
+
+          <div class="portrait-frame">
+            <img src="./assets/img/profile.webp" alt="Portrait of César Méndez Castro" width="900" height="900" fetchpriority="high" decoding="async">
+            <span class="portrait-scan" aria-hidden="true"></span>
+          </div>
+
+          <div class="orbit-track" aria-hidden="true">
+            <span class="orbit-chip" style="--top:3%;--left:50%"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/java/java-original.svg" alt="" width="28" height="28" loading="lazy"><b class="chip-fallback">Ja</b></span>
+            <span class="orbit-chip" style="--top:50%;--left:97%"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/kotlin/kotlin-original.svg" alt="" width="28" height="28" loading="lazy"><b class="chip-fallback">Kt</b></span>
+            <span class="orbit-chip" style="--top:97%;--left:50%"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/spring/spring-original.svg" alt="" width="28" height="28" loading="lazy"><b class="chip-fallback">Sp</b></span>
+            <span class="orbit-chip" style="--top:50%;--left:3%"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/icons/mysql/mysql-original.svg" alt="" width="28" height="28" loading="lazy"><b class="chip-fallback">My</b></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a class="scroll-hint" href="#about">
+      <span data-i18n="hero.scroll">Scroll</span>
+      <i aria-hidden="true"></i>
+    </a>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about" class="section section-alt" aria-labelledby="about-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-kicker"><span class="section-number" aria-hidden="true">01</span><span data-i18n="about.kicker">About me</span></p>
+        <h2 id="about-title" data-split data-i18n="about.title">Software, data and real-world problem solving.</h2>
+      </header>
+
+      <div class="about-grid">
+        <article class="panel about-story reveal" data-reveal-delay="1">
+          <span class="panel-corner" aria-hidden="true"></span>
+          <p data-i18n="about.p1">I currently work at Proconsi in application support, diagnosing technical issues, maintaining enterprise software and working directly with SQL and DBF/XBase data.</p>
+          <p data-i18n="about.p2">That experience taught me to understand an existing system before changing it, to validate data carefully, and to work through problems methodically instead of guessing.</p>
+          <p data-i18n="about.p3">My development focus is backend engineering with Java and Kotlin, while I keep building knowledge across Android, web, testing, Docker, game development and blockchain.</p>
+
+          <ul class="role-targets" aria-label="Roles I am looking for">
+            <li data-i18n="about.role1">Junior Software Developer</li>
+            <li data-i18n="about.role2">Java Developer Junior</li>
+            <li data-i18n="about.role3">Backend Developer Junior</li>
+            <li data-i18n="about.role4">Junior Programmer</li>
+          </ul>
+        </article>
+
+        <ul class="about-facts reveal" data-reveal-delay="2">
+          <li class="fact">
+            <span class="fact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M12 4 2 9l10 5 10-5-10-5Z"/><path d="M6 11.5V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg>
+            </span>
+            <span class="fact-body">
+              <strong data-i18n="about.fact1Title">DAM completed</strong>
+              <span data-i18n="about.fact1Text">Higher Technician in Multiplatform Application Development</span>
+            </span>
+          </li>
+          <li class="fact">
+            <span class="fact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 12h18"/></svg>
+            </span>
+            <span class="fact-body">
+              <strong>Proconsi</strong>
+              <span data-i18n="about.fact2Text">Application Support · Enterprise Software</span>
+            </span>
+          </li>
+          <li class="fact">
+            <span class="fact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M4 5h7a2 2 0 0 1 2 2v13a2 2 0 0 0-2-2H4V5Z"/><path d="M20 5h-7a2 2 0 0 0-2 2v13a2 2 0 0 1 2-2h7V5Z"/></svg>
+            </span>
+            <span class="fact-body">
+              <strong>ConquerBlocks</strong>
+              <span data-i18n="about.fact3Text">Full Stack Web Development · In progress</span>
+            </span>
+          </li>
+          <li class="fact">
+            <span class="fact-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.8 3.8 9S14.5 21.3 12 21c-2.5-.3-3.8-5.8-3.8-9S9.5 5.7 12 3Z"/></svg>
+            </span>
+            <span class="fact-body">
+              <strong data-i18n="about.fact4Title">Spain · Remote</strong>
+              <span data-i18n="about.fact4Text">Open to junior software development opportunities</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ STACK ═══════════ -->
+  <section id="stack" class="section" aria-labelledby="stack-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-kicker"><span class="section-number" aria-hidden="true">02</span><span data-i18n="stack.kicker">Tech stack</span></p>
+        <h2 id="stack-title" data-split data-i18n="stack.title">Everything I've worked with, organised by area.</h2>
+        <p class="section-copy" data-i18n="stack.subtitle">Confirmed technologies only. Anything I'm still learning lives in its own section further down.</p>
+      </header>
+
+      <div class="stack-toolbar reveal" data-reveal-delay="1">
+        <div class="stack-filters" role="group" aria-label="Filter technologies by area">
+          <button class="chip-filter is-active" type="button" data-filter="all" aria-pressed="true" data-i18n="stack.all">All</button>
+          <button class="chip-filter" type="button" data-filter="languages" aria-pressed="false" data-i18n="stack.languages">Languages &amp; Web</button>
+          <button class="chip-filter" type="button" data-filter="backend" aria-pressed="false" data-i18n="stack.backend">Backend &amp; Data</button>
+          <button class="chip-filter" type="button" data-filter="tooling" aria-pressed="false" data-i18n="stack.tooling">Mobile &amp; Tooling</button>
+          <button class="chip-filter" type="button" data-filter="game" aria-pressed="false" data-i18n="stack.game">Game &amp; Blockchain</button>
+        </div>
+        <p class="stack-count" aria-live="polite" data-stack-count></p>
+      </div>
+
+      <ul class="tech-grid" id="tech-grid" data-spotlight></ul>
+
+      <noscript>
+        <p class="section-copy">Java, Kotlin, Python, JavaScript, TypeScript, SQL, Solidity, HTML5, CSS3, XML, XHTML, JSON, XBase, FoxPro, Clipper, Spring Boot, Hibernate, JDBC, REST APIs, MySQL, SQLite, DBF, JUnit 5, phpMyAdmin, XAMPP, Android SDK, Android Studio, Gradle, Maven, Docker, Git, GitHub, GitHub Actions, PowerShell, Linux, Windows, IntelliJ IDEA, VS Code, Eclipse, NetBeans, PyCharm, draw.io, Unreal Engine 5, Blueprints, Smart Contracts.</p>
+      </noscript>
+
+      <div class="concepts reveal" data-reveal-delay="2">
+        <h3 class="concepts-title" data-i18n="stack.concepts">Software engineering foundations</h3>
+        <ul class="concepts-list">
+          <li>OOP</li><li>SOLID</li><li>MVC</li><li>Layered Architecture</li>
+          <li>REST Architecture</li><li>UML</li><li>Clean Code</li>
+          <li>Algorithms</li><li>Data Structures</li><li>Exception Handling</li>
+          <li>Debugging</li><li>Troubleshooting</li><li>CRUD</li>
+          <li>Database Design</li><li>Normalization</li><li>Relational Databases</li>
+          <li>Data Validation</li><li>Data Processing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EXPERIENCE ═══════════ -->
+  <section id="experience" class="section section-alt" aria-labelledby="experience-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-kicker"><span class="section-number" aria-hidden="true">03</span><span data-i18n="experience.kicker">Experience &amp; education</span></p>
+        <h2 id="experience-title" data-split data-i18n="experience.title">The professional context behind the code.</h2>
+      </header>
+
+      <ol class="timeline" data-timeline>
+        <li class="timeline-item reveal">
+          <span class="timeline-dot" aria-hidden="true"></span>
+          <p class="timeline-meta">
+            <span class="timeline-date">2026 — <span data-i18n="common.present">Present</span></span>
+            <span class="timeline-place">León, Spain</span>
+          </p>
+          <article class="panel timeline-card">
+            <header class="timeline-head">
+              <div>
+                <p class="timeline-org">Proconsi</p>
+                <h3 data-i18n="experience.role">Application Support · Enterprise Software</h3>
+              </div>
+              <span class="status-pill live"><i aria-hidden="true"></i><span data-i18n="common.current">Current</span></span>
+            </header>
+            <ul class="bullets">
+              <li data-i18n="experience.b1">Technical support and diagnosis of incidents on enterprise software.</li>
+              <li data-i18n="experience.b2">Work with SQL and DBF/XBase data: insertions, corrections and validation of records.</li>
+              <li data-i18n="experience.b3">Writing and running SQL scripts and data-maintenance routines.</li>
+              <li data-i18n="experience.b4">Application maintenance and direct support to users and customers.</li>
+              <li data-i18n="experience.b5">Automation and scripting with PowerShell.</li>
+              <li data-i18n="experience.b6">Working around legacy XBase, FoxPro and Clipper environments.</li>
+            </ul>
+            <ul class="mini-tags" aria-label="Technologies used">
+              <li>SQL</li><li>DBF / XBase</li><li>FoxPro</li><li>Clipper</li><li>PowerShell</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-dot is-education" aria-hidden="true"></span>
+          <p class="timeline-meta">
+            <span class="timeline-date">2024 — 2026</span>
+            <span class="timeline-place">León, Spain</span>
+          </p>
+          <article class="panel timeline-card">
+            <header class="timeline-head">
+              <div>
+                <p class="timeline-org">María Auxiliadora</p>
+                <h3 data-i18n="education.dam">Higher Technician in Multiplatform Application Development (DAM)</h3>
+              </div>
+              <span class="status-pill done"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 13 4 4L19 7"/></svg><span data-i18n="common.completed">Completed</span></span>
+            </header>
+            <p class="timeline-text" data-i18n="education.damText">Java, databases, Android, networking, concurrent programming, testing, software architecture and application development.</p>
+            <ul class="mini-tags" aria-label="Subjects covered">
+              <li>Java</li><li>Android</li><li>MySQL</li><li>Concurrency</li><li>Testing</li><li>UML</li>
+            </ul>
+          </article>
+        </li>
+
+        <li class="timeline-item reveal">
+          <span class="timeline-dot is-learning" aria-hidden="true"></span>
+          <p class="timeline-meta">
+            <span class="timeline-date" data-i18n="common.inProgress">In progress</span>
+            <span class="timeline-place">ConquerBlocks</span>
+          </p>
+          <article class="panel timeline-card">
+            <header class="timeline-head">
+              <div>
+                <p class="timeline-org">ConquerBlocks</p>
+                <h3 data-i18n="education.fullstack">Full Stack Web Development</h3>
+              </div>
+              <span class="status-pill learning"><i aria-hidden="true"></i><span data-i18n="common.learning">Learning</span></span>
+            </header>
+            <p class="timeline-text" data-i18n="education.fullstackText">Ongoing training in modern web technologies and software development, alongside my work and my backend focus.</p>
+          </article>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ═══════════ PROJECTS ═══════════ -->
+  <section id="projects" class="section" aria-labelledby="projects-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-kicker"><span class="section-number" aria-hidden="true">04</span><span data-i18n="projects.kicker">Featured projects</span></p>
+        <h2 id="projects-title" data-split data-i18n="projects.title">Projects that show how I think and build.</h2>
+      </header>
+
+      <div class="projects">
+
+        <!-- 01 — TFG-BBDD-TRUCKS -->
+        <article class="project project-wide reveal" data-repo="TFG-BBDD-TRUCKS">
+          <div class="project-visual" data-anim aria-hidden="true">
+            <svg class="viz viz-schema" viewBox="0 0 320 220" role="presentation" focusable="false">
+              <g class="viz-links">
+                <path d="M92 66h60v42h58"/>
+                <path d="M92 108H62v46h90"/>
+                <path d="M210 108v46h-58"/>
+              </g>
+              <g class="viz-tables">
+                <g class="viz-table" style="--d:0s"><rect x="24" y="40" width="70" height="52" rx="7"/><line x1="24" y1="55" x2="94" y2="55"/><line x1="34" y1="70" x2="72" y2="70"/><line x1="34" y1="80" x2="66" y2="80"/></g>
+                <g class="viz-table" style="--d:.25s"><rect x="126" y="86" width="70" height="52" rx="7"/><line x1="126" y1="101" x2="196" y2="101"/><line x1="136" y1="116" x2="180" y2="116"/><line x1="136" y1="126" x2="170" y2="126"/></g>
+                <g class="viz-table" style="--d:.5s"><rect x="212" y="82" width="70" height="52" rx="7"/><line x1="212" y1="97" x2="282" y2="97"/><line x1="222" y1="112" x2="266" y2="112"/><line x1="222" y1="122" x2="256" y2="122"/></g>
+                <g class="viz-table" style="--d:.75s"><rect x="112" y="150" width="70" height="46" rx="7"/><line x1="112" y1="165" x2="182" y2="165"/><line x1="122" y1="180" x2="164" y2="180"/></g>
+              </g>
+              <g class="viz-pulse"><circle r="3.5"><animateMotion dur="4s" repeatCount="indefinite" path="M92 66h60v42h58"/></circle></g>
+            </svg>
+            <span class="viz-label">3NF</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index" aria-hidden="true">01</span>
+              <ul class="project-meta" data-repo-meta hidden>
+                <li data-repo-lang></li>
+                <li data-repo-stars></li>
+                <li data-repo-updated></li>
+              </ul>
+            </div>
+            <h3>TFG-BBDD-TRUCKS</h3>
+            <p class="project-context" data-i18n="projects.tfgContext">Final degree project (TFG) — DAM</p>
+            <p data-i18n="projects.tfg">Relational MySQL database for a road transport operator, taken from domain analysis and ER modelling through 3NF normalisation, physical design and SQL exploitation with joins and triggers.</p>
+            <ul class="project-tags"><li>MySQL 8</li><li>SQL</li><li>ER Model</li><li>3NF</li><li>JOINs</li><li>Triggers</li><li>phpMyAdmin</li><li>draw.io</li></ul>
+            <a class="project-link" href="https://github.com/TsCesar/TFG-BBDD-TRUCKS" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.viewRepo">View repository</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              <span class="sr-only">TFG-BBDD-TRUCKS</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 02 — PSP-TRUCKS -->
+        <article class="project reveal" data-repo="PSP-TRUCKS">
+          <div class="project-visual" data-anim aria-hidden="true">
+            <svg class="viz viz-network" viewBox="0 0 320 220" role="presentation" focusable="false">
+              <g class="viz-node"><rect x="26" y="82" width="62" height="56" rx="9"/><path d="M40 100h34M40 112h24"/></g>
+              <g class="viz-node"><rect x="232" y="82" width="62" height="56" rx="9"/><path d="M246 100h34M246 112h24"/></g>
+              <path class="viz-wire" d="M88 110h144"/>
+              <g class="viz-lock">
+                <rect x="142" y="96" width="36" height="30" rx="6"/>
+                <path d="M150 96V88a10 10 0 0 1 20 0v8"/>
+              </g>
+              <circle class="viz-packet" r="4"><animateMotion dur="2.6s" repeatCount="indefinite" path="M88 110h144"/></circle>
+              <circle class="viz-packet viz-packet-back" r="4"><animateMotion dur="2.6s" begin="1.3s" repeatCount="indefinite" path="M232 110H88"/></circle>
+            </svg>
+            <span class="viz-label">TLS</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index" aria-hidden="true">02</span>
+              <ul class="project-meta" data-repo-meta hidden>
+                <li data-repo-lang></li>
+                <li data-repo-stars></li>
+                <li data-repo-updated></li>
+              </ul>
+            </div>
+            <h3>PSP-TRUCKS</h3>
+            <p class="project-context" data-i18n="projects.pspContext">Client-server systems · Python</p>
+            <p data-i18n="projects.psp">Secure Python client-server system with TLS 1.2+, MySQL persistence, bcrypt password hashing, token-based sessions, role-based access control, threading, a JSON protocol and CRUD operations.</p>
+            <ul class="project-tags"><li>Python</li><li>TLS 1.2+</li><li>MySQL</li><li>bcrypt</li><li>RBAC</li><li>Threading</li><li>JSON</li><li>CRUD</li></ul>
+            <a class="project-link" href="https://github.com/TsCesar/PSP-TRUCKS" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.viewRepo">View repository</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              <span class="sr-only">PSP-TRUCKS</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 03 — ArcadePong -->
+        <article class="project reveal" data-repo="ArcadePong">
+          <div class="project-visual" data-anim aria-hidden="true">
+            <div class="viz-pong">
+              <span class="pong-net"></span>
+              <span class="pong-paddle pong-left"></span>
+              <span class="pong-paddle pong-right"></span>
+              <span class="pong-ball"></span>
+            </div>
+            <span class="viz-label">PONG</span>
+          </div>
+
+          <div class="project-body">
+            <div class="project-top">
+              <span class="project-index" aria-hidden="true">03</span>
+              <ul class="project-meta" data-repo-meta hidden>
+                <li data-repo-lang></li>
+                <li data-repo-stars></li>
+                <li data-repo-updated></li>
+              </ul>
+            </div>
+            <h3>ArcadePong</h3>
+            <p class="project-context" data-i18n="projects.pongContext">Game logic practice · Python</p>
+            <p data-i18n="projects.pong">Arcade-style Pong built in Python to practise game loops, collision and input handling, and how to structure a small interactive application.</p>
+            <ul class="project-tags"><li>Python</li><li>Game Loop</li><li>Collision</li><li>Input Handling</li></ul>
+            <a class="project-link" href="https://github.com/TsCesar/ArcadePong" target="_blank" rel="noopener noreferrer">
+              <span data-i18n="projects.viewRepo">View repository</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              <span class="sr-only">ArcadePong</span>
+            </a>
+          </div>
+        </article>
+      </div>
+
+      <p class="projects-footer reveal">
+        <a class="button button-ghost magnetic" href="https://github.com/TsCesar?tab=repositories" target="_blank" rel="noopener noreferrer">
+          <span data-i18n="projects.all">View all repositories</span>
+          <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 17 17 7M9 7h8v8"/></svg>
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════ LEARNING ═══════════ -->
+  <section id="learning" class="section section-alt" aria-labelledby="learning-title">
+    <div class="container">
+      <header class="section-head reveal">
+        <p class="section-kicker"><span class="section-number" aria-hidden="true">05</span><span data-i18n="learning.kicker">Currently exploring</span></p>
+        <h2 id="learning-title" data-split data-i18n="learning.title">Technologies I'm building introductory knowledge in.</h2>
+        <p class="section-copy" data-i18n="learning.subtitle">Deliberately kept apart from my main stack. These are things I've had contact with and am still learning — not technologies I'd claim to know well.</p>
+      </header>
+
+      <ul class="learning-grid reveal" id="learning-grid" data-reveal-delay="1" data-spotlight></ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOCUS ═══════════ -->
+  <section class="section" aria-labelledby="focus-title">
+    <div class="container focus-layout">
+      <header class="section-head reveal">
+        <p class="section-kicker"><span class="section-number" aria-hidden="true">06</span><span data-i18n="focus.kicker">Current focus</span></p>
+        <h2 id="focus-title" data-split data-i18n="focus.title">Going deeper, not just wider.</h2>
+        <p class="section-copy" data-i18n="focus.copy">My goal is to turn a broad technical base into stronger backend engineering skills and finished, well-documented projects.</p>
+      </header>
+
+      <ul class="focus-list reveal" data-reveal-delay="1">
+        <li class="focus-row"><span class="focus-key">Backend</span><strong>Java · Kotlin · Spring Boot</strong><i aria-hidden="true"></i></li>
+        <li class="focus-row"><span class="focus-key" data-i18n="focus.arch">Architecture</span><strong data-i18n="focus.archValue">Clean · Maintainable · Layered</strong><i aria-hidden="true"></i></li>
+        <li class="focus-row"><span class="focus-key">Testing</span><strong data-i18n="focus.testValue">JUnit 5 · Better test design</strong><i aria-hidden="true"></i></li>
+        <li class="focus-row"><span class="focus-key">DevOps</span><strong>Docker · GitHub Actions</strong><i aria-hidden="true"></i></li>
+        <li class="focus-row"><span class="focus-key" data-i18n="focus.data">Data</span><strong data-i18n="focus.dataValue">SQL · Modelling · Normalisation</strong><i aria-hidden="true"></i></li>
+        <li class="focus-row"><span class="focus-key" data-i18n="focus.projects">Projects</span><strong data-i18n="focus.projectsValue">Finished · Useful · Documented</strong><i aria-hidden="true"></i></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONTACT ═══════════ -->
+  <section id="contact" class="section section-contact" aria-labelledby="contact-title">
+    <div class="container">
+      <div class="contact-card reveal">
+        <span class="contact-glow" aria-hidden="true"></span>
+
+        <div class="contact-copy">
+          <p class="section-kicker"><span class="section-number" aria-hidden="true">07</span><span data-i18n="contact.kicker">Let's connect</span></p>
+          <h2 id="contact-title" data-split data-i18n="contact.title">Looking for a Junior Software Developer?</h2>
+          <p data-i18n="contact.text">I'm open to junior software development opportunities in Spain, remote, or international environments. The fastest way to reach me is email.</p>
+        </div>
+
+        <div class="contact-actions">
+          <a class="button button-primary magnetic" href="mailto:cesarmencas19@gmail.com">
+            <span data-i18n="contact.email">Send me an email</span>
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg>
+          </a>
+          <button class="button button-ghost magnetic" type="button" data-copy-email data-email="cesarmencas19@gmail.com">
+            <span data-i18n="contact.copyEmail">Copy email</span>
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5h10"/></svg>
+          </button>
+          <a class="button button-ghost magnetic" href="./assets/cv/CV_CesarMendez_EN.pdf" data-cv-link download>
+            <span data-i18n="hero.cv">Download CV</span>
+            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
+          </a>
+        </div>
+
+        <ul class="contact-links">
+          <li><a href="https://github.com/TsCesar" target="_blank" rel="noopener noreferrer">github.com/TsCesar</a></li>
+          <li><a href="https://www.linkedin.com/in/c%C3%A9sar-m%C3%A9ndez-castro-a0b315310/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mailto:cesarmencas19@gmail.com">cesarmencas19@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>© <span data-year>2026</span> César Méndez Castro</p>
+    <p data-i18n="footer.made">Built from scratch with HTML, CSS and JavaScript. No frameworks.</p>
+    <a href="#top" class="back-top">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 19V5m0 0-6 6m6-6 6 6"/></svg>
+      <span class="sr-only" data-i18n="a11y.backTop">Back to top</span>
+    </a>
+  </div>
+</footer>
+
+<!-- Command palette -->
+<div class="palette" data-palette hidden>
+  <div class="palette-backdrop" data-palette-close></div>
+  <div class="palette-dialog" role="dialog" aria-modal="true" aria-labelledby="palette-label">
+    <h2 class="sr-only" id="palette-label" data-i18n="palette.title">Command palette</h2>
+    <div class="palette-search">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="text" data-palette-input autocomplete="off" spellcheck="false" aria-controls="palette-list" placeholder="Jump to…">
+      <kbd>Esc</kbd>
+    </div>
+    <ul class="palette-list" id="palette-list" role="listbox" aria-label="Commands" data-palette-list></ul>
+    <p class="palette-empty" data-palette-empty hidden data-i18n="palette.empty">No matching command.</p>
+  </div>
+</div>
+
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+<script src="./js/app.js" defer></script>
 </body>
 </html>
