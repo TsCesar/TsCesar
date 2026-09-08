@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>404 · César Méndez Castro</title>
+<link rel="icon" href="/TsCesar/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/TsCesar/css/base.css">
+<style>
+  .nf {
+    min-height: 100svh;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 1.25rem;
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+  .nf-code {
+    font-family: var(--font-mono);
+    font-size: clamp(4rem, 18vw, 9rem);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -.05em;
+    background-image: linear-gradient(100deg, #7dd3fc, #c4b5fd 55%, #f9a8d4);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .nf h1 { font-size: clamp(1.3rem, 4vw, 2rem); font-weight: 600; }
+  .nf p { max-width: 42ch; color: var(--text-3); }
+  .nf a {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    padding-inline: 1.4rem;
+    border: 1px solid rgba(56, 189, 248, .4);
+    border-radius: var(--r-md);
+    background: linear-gradient(118deg, #0ea5e9, #8b5cf6);
+    font-weight: 600;
+    transition: transform .3s var(--ease);
+  }
+  .nf a:hover { transform: translateY(-3px); }
+</style>
+</head>
+<body>
+  <main class="nf">
+    <p class="nf-code">404</p>
+    <h1 data-nf-title>This page doesn't exist</h1>
+    <p data-nf-text>The link may be broken or the page may have moved. Everything lives on the main portfolio page.</p>
+    <a href="/TsCesar/" data-nf-cta>Back to the portfolio</a>
+  </main>
+  <script>
+    // Match the visitor's saved language, falling back to the browser's.
+    (function () {
+      var lang = "en";
+      try {
+        var saved = localStorage.getItem("portfolio-lang");
+        lang = (saved === "es" || saved === "en")
+          ? saved
+          : ((navigator.language || "en").toLowerCase().indexOf("es") === 0 ? "es" : "en");
+      } catch (e) {}
+
+      if (lang !== "es") return;
+
+      document.documentElement.lang = "es";
+      document.title = "404 · César Méndez Castro";
+      document.querySelector("[data-nf-title]").textContent = "Esta página no existe";
+      document.querySelector("[data-nf-text]").textContent =
+        "Puede que el enlace esté roto o que la página se haya movido. Todo el contenido está en la página principal del portfolio.";
+      document.querySelector("[data-nf-cta]").textContent = "Volver al portfolio";
+    })();
+  </script>
+</body>
+</html>

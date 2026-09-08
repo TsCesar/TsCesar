@@ -1,0 +1,19 @@
+{
+  "name": "César Méndez Castro · Junior Software Developer",
+  "short_name": "César Méndez",
+  "description": "Portfolio of César Méndez Castro — Junior Software Developer focused on Java, Kotlin and backend engineering.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#04070f",
+  "theme_color": "#04070f",
+  "lang": "en",
+  "categories": ["portfolio", "developer"],
+  "icons": [
+    { "src": "./assets/img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "./assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}
