@@ -1,0 +1,263 @@
+/* ============================================================
+   RESPONSIVE — 320px → 4K, touch, landscape, ultrawide
+   Loaded last so it wins on equal specificity.
+   ============================================================ */
+
+/* ───────── ≤ 1280px — laptops ───────── */
+@media (max-width: 1280px) {
+  .hero-inner { gap: clamp(1.5rem, 3.5vw, 3rem); }
+  .portrait { width: min(360px, 34vw); }
+}
+
+/* ───────── ≤ 1080px — small laptops / large tablets ───────── */
+@media (max-width: 1080px) {
+  :root { --header-h: 64px; }
+
+  .nav-links { gap: .9rem; }
+  .nav-links a { font-size: var(--fs-2xs); }
+  .nav-idx { display: none; }
+
+  .about-grid { grid-template-columns: 1fr; }
+  .about-facts { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+
+  .project-wide { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
+  .project-wide .project-visual {
+    border-right: 0;
+    border-bottom: 1px solid var(--line-1);
+    min-height: 220px;
+  }
+}
+
+/* ───────── ≤ 900px — tablets portrait, mobile nav kicks in ───────── */
+@media (max-width: 900px) {
+
+  /* --- Navigation --- */
+  .nav-toggle { display: grid; }
+
+  .nav-panel {
+    position: fixed;
+    top: calc(var(--header-h) + 4px);
+    left: var(--gutter);
+    right: var(--gutter);
+    display: grid;
+    gap: .5rem;
+    max-height: calc(100dvh - var(--header-h) - 2rem);
+    padding: 1rem;
+    border: 1px solid var(--line-2);
+    border-radius: var(--r-xl);
+    background: rgba(6, 10, 20, .97);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .5);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    opacity: 0;
+    transform: translateY(-14px) scale(.985);
+    pointer-events: none;
+    transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+  }
+  .nav-panel.is-open {
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .nav-links { display: grid; gap: 0; }
+  .nav-links li + li { border-top: 1px solid var(--line-1); }
+  .nav-links a {
+    justify-content: flex-start;
+    min-height: 52px;               /* comfortable tap target */
+    padding-inline: .35rem;
+    font-size: var(--fs-sm);
+  }
+  .nav-idx { display: inline; min-width: 2ch; }
+  .nav-links a::after { display: none; }
+  .nav-links a.is-active { color: var(--accent); }
+
+  .nav-actions {
+    justify-content: space-between;
+    margin-top: .4rem;
+    padding-top: .8rem;
+    border-top: 1px solid var(--line-1);
+  }
+  .lang-switch, .icon-button, .palette-hint, .nav-toggle { height: 46px; }
+  .icon-button { width: 46px; }
+
+  /* --- Hero --- */
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-h) + var(--space-lg));
+  }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+  .hero-copy {
+    order: 2;
+    text-align: center;
+    display: grid;
+    justify-items: center;
+  }
+  .hero-visual { order: 1; }
+  .hero-title, .hero-description { max-width: 100%; }
+  .hero-terminal { justify-content: center; }
+  .hero-actions { justify-content: center; }
+  .hero-socials { justify-content: center; }
+  .hero-facts { width: 100%; text-align: left; }
+  .portrait { width: min(330px, 68vw); }
+  .scroll-hint { display: none; }
+  .hero-grid-floor { height: 30vh; }
+
+  /* --- Timeline: rail moves to the left edge --- */
+  .timeline::before,
+  .timeline::after { left: 6px; }
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: .8rem;
+    padding-left: 2.1rem;
+  }
+  .timeline-dot { left: 0; top: .4rem; }
+  .timeline-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .2rem .8rem;
+    padding-top: 0;
+    text-align: left;
+  }
+
+  /* --- Other layouts --- */
+  .focus-layout { grid-template-columns: 1fr; }
+  .contact-copy { max-width: 100%; }
+}
+
+/* ───────── ≤ 620px — phones ───────── */
+@media (max-width: 620px) {
+  :root { --header-h: 60px; }
+
+  .section { padding-block: var(--space-xl); }
+
+  .brand-text { display: none; }
+
+  .hero-title { margin-bottom: var(--space-xs); }
+  .hero-terminal { font-size: var(--fs-2xs); }
+  .prompt { display: none; }
+
+  /* Full-width buttons read better than a ragged wrapped row */
+  .hero-actions .button,
+  .contact-actions .button { width: 100%; }
+
+  .hero-facts { grid-template-columns: repeat(2, 1fr); }
+
+  .role-targets li { font-size: 10px; }
+
+  .stack-toolbar { flex-direction: column; align-items: flex-start; }
+
+  /* Let the filter row scroll sideways instead of stacking five deep */
+  .stack-filters {
+    flex-wrap: nowrap;
+    width: 100%;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    padding-bottom: .35rem;
+    scrollbar-width: none;
+  }
+  .stack-filters::-webkit-scrollbar { display: none; }
+  .chip-filter { flex: none; scroll-snap-align: start; }
+
+  .tech-grid { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); }
+  .tech-card { min-height: 124px; padding: .8rem .45rem; }
+  .tech-role { display: none; }   /* keeps small cards legible */
+
+  .timeline-head { flex-direction: column; align-items: flex-start; gap: .6rem; }
+
+  .project-visual { min-height: 170px; }
+  .project:not(.project-wide) .project-visual { height: 180px; }
+  .project-top { flex-wrap: wrap; }
+  .project-meta { justify-content: flex-start; }
+
+  .contact-links { gap: .5rem 1rem; }
+  .footer-inner { flex-direction: column; align-items: flex-start; }
+  .back-top { align-self: flex-end; margin-top: -2.6rem; }
+
+  .palette { padding-top: 4rem; }
+  .palette-dialog { max-height: 70dvh; }
+}
+
+/* ───────── ≤ 380px — small phones (down to 320) ───────── */
+@media (max-width: 380px) {
+  :root { --gutter: .85rem; }
+
+  .hero-facts { grid-template-columns: 1fr; }
+  .tech-grid { grid-template-columns: repeat(2, 1fr); gap: .45rem; }
+  .tech-card { min-height: 116px; }
+  .tech-icon { width: 42px; }
+  .about-facts { grid-template-columns: 1fr; }
+  .fact { grid-template-columns: 40px 1fr; gap: .75rem; padding: .85rem .9rem; }
+  .fact-icon { width: 40px; height: 40px; }
+  .focus-row { grid-template-columns: 1fr; gap: .2rem; }
+  .concepts-list li, .project-tags li, .mini-tags li { font-size: 10px; }
+}
+
+/* ───────── Landscape phones — short viewports ───────── */
+@media (max-height: 520px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+    padding-top: calc(var(--header-h) + var(--space-md));
+    padding-bottom: var(--space-md);
+  }
+  .hero-inner {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    align-items: center;
+    gap: var(--space-md);
+  }
+  .hero-copy { order: 1; text-align: left; justify-items: start; }
+  .hero-visual { order: 2; }
+  .hero-terminal, .hero-actions, .hero-socials { justify-content: flex-start; }
+  .portrait { width: min(230px, 30vw); }
+  .hero-facts { display: none; }       /* not enough vertical room */
+  .scroll-hint { display: none; }
+  .section { padding-block: var(--space-lg); }
+
+  .nav-panel { max-height: calc(100dvh - var(--header-h) - 1rem); }
+}
+
+/* ───────── ≥ 1600px — large desktops ───────── */
+@media (min-width: 1600px) {
+  :root {
+    --container: 1340px;
+    --header-h: 76px;
+  }
+  .portrait { width: 430px; }
+}
+
+/* ───────── ≥ 2000px — ultrawide ───────── */
+@media (min-width: 2000px) {
+  :root { --container: 1500px; }
+  /* Stop the hero copy from stretching into unreadable line lengths */
+  .hero-description { max-width: 50ch; }
+  .section-head { max-width: 52ch; }
+}
+
+/* ───────── ≥ 2400px — 4K and above ───────── */
+@media (min-width: 2400px) {
+  html { font-size: 19px; }
+  :root { --container: 1680px; }
+  #bg-canvas { opacity: .5; }
+}
+
+/* ───────── Print ───────── */
+@media print {
+  #bg-canvas, .cursor-glow, .grain, .scroll-progress,
+  .site-header, .scroll-hint, .palette, .toast,
+  .aurora, .hero-grid-floor, .back-top { display: none !important; }
+
+  body { background: #fff; color: #000; }
+  .panel, .project, .tech-card, .learning-card, .contact-card {
+    border-color: #ccc;
+    background: none;
+    box-shadow: none;
+  }
+  .section { padding-block: 1.5rem; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: .8em; }
+}

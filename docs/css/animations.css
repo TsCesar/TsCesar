@@ -1,0 +1,320 @@
+/* ============================================================
+   ANIMATIONS — keyframes, reveals, hover states, reduced motion
+   ============================================================ */
+
+/* ---------- Keyframes ---------- */
+@keyframes shine {
+  from { background-position: 0% center; }
+  to   { background-position: 100% center; }
+}
+@keyframes pulseDot    { 50%  { opacity: .4; transform: scale(.8); } }
+@keyframes caretBlink  { 50%  { opacity: 0; } }
+@keyframes haloPulse   { 50%  { opacity: .75; transform: scale(1.07); } }
+@keyframes scanSweep   { from { transform: translateY(-100%); } to { transform: translateY(100%); } }
+
+/* The organic blob shape is static. Animating `border-radius` here repainted
+   the whole gradient + box-shadow every frame and was by far the most
+   expensive thing on the page; a slow transform-based drift gives the frame
+   life for almost nothing, because transforms run on the compositor. */
+@keyframes portraitBreathe {
+  0%, 100% { transform: translateZ(40px) scale(1)     rotate(0deg); }
+  50%      { transform: translateZ(40px) scale(1.018) rotate(-1.1deg); }
+}
+.portrait-frame { animation: portraitBreathe 12s ease-in-out infinite; }
+
+/* Rotation keyframes must declare BOTH ends with the same transform function
+   list. `to { transform: rotate(360deg) }` alone is the identity matrix, so
+   any element with an existing base transform interpolates matrix-to-matrix
+   and never actually turns. */
+@keyframes spin     { from { transform: rotate(0deg);  } to { transform: rotate(360deg);  } }
+@keyframes spinBack { from { transform: rotate(0deg);  } to { transform: rotate(-360deg); } }
+
+/* The orbit track keeps its Z offset in both frames for the same reason. */
+@keyframes orbitSpin {
+  from { transform: translateZ(70px) rotate(0deg); }
+  to   { transform: translateZ(70px) rotate(360deg); }
+}
+@keyframes scrollNudge {
+  0%, 100% { transform: scaleY(.35); transform-origin: 50% 0; opacity: .35; }
+  50%      { transform: scaleY(1); opacity: 1; }
+}
+@keyframes gridDrift   { from { transform: translateY(0); } to { transform: translateY(62px); } }
+@keyframes auroraDrift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(28px, 20px, 0) scale(1.07); }
+}
+@keyframes dashFlow    { to   { stroke-dashoffset: -80; } }
+@keyframes tableIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes pongBall {
+  0%   { transform: translate(-92px, -26px); }
+  25%  { transform: translate(88px, 24px); }
+  50%  { transform: translate(-70px, 30px); }
+  75%  { transform: translate(90px, -28px); }
+  100% { transform: translate(-92px, -26px); }
+}
+@keyframes paddleUp    { 50% { transform: translateY(-30%); } }
+@keyframes paddleDown  { 50% { transform: translateY(30%); } }
+@keyframes sheen       { to  { transform: translateX(110%); } }
+@keyframes toastIn     { from { opacity: 0; transform: translate(-50%, 24px); } }
+@keyframes paletteIn {
+  from { opacity: 0; transform: translateY(-12px) scale(.98); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* ---------- Ambient motion ---------- */
+.gradient-text        { animation: shine 7s linear infinite; }
+.availability-dot     { animation: pulseDot 2s ease-in-out infinite; }
+.status-pill.live i   { animation: pulseDot 2s ease-in-out infinite; }
+.caret                { animation: caretBlink .9s steps(1) infinite; }
+.portrait-halo        { animation: haloPulse 4.5s ease-in-out infinite; }
+.portrait-scan::after { animation: scanSweep 7s linear infinite; }
+.portrait-ring-1      { animation: spin 34s linear infinite; }
+.portrait-ring-2      { animation: spinBack 26s linear infinite; }
+.orbit-track          { animation: orbitSpin 30s linear infinite; }
+.orbit-chip           { animation: spinBack 30s linear infinite; }
+.scroll-hint i        { animation: scrollNudge 1.8s ease-in-out infinite; }
+.hero-grid-floor::before { animation: gridDrift 9s linear infinite; }
+.aurora               { animation: auroraDrift 13s ease-in-out infinite alternate; }
+.aurora-2             { animation-duration: 17s; animation-delay: -6s; }
+.aurora-3             { animation-duration: 21s; animation-delay: -3s; }
+.toast.is-visible     { animation: toastIn var(--dur) var(--ease); }
+.palette-dialog       { animation: paletteIn .22s var(--ease-out); }
+
+/* Parallax rides on the `translate` property so it composes with, rather
+   than fights, the transform used by the drift animation and the tilt. */
+.aurora, .portrait {
+  translate: var(--par-x, 0) var(--par-y, 0);
+  transition: translate .45s var(--ease);
+}
+
+/* Project visuals — paused until scrolled into view (see js) */
+.viz-links path   { animation: dashFlow 3s linear infinite; }
+.viz-wire         { animation: dashFlow 4s linear infinite; }
+.viz-table        { animation: tableIn .6s var(--ease-out) backwards; animation-delay: var(--d, 0s); }
+.pong-ball        { animation: pongBall 5s linear infinite; }
+.pong-left        { animation: paddleUp 2.6s ease-in-out infinite; }
+.pong-right       { animation: paddleDown 3.1s ease-in-out infinite; }
+
+.project-visual[data-anim] .viz *,
+.project-visual[data-anim] .viz-pong * { animation-play-state: paused; }
+.project-visual.is-live .viz *,
+.project-visual.is-live .viz-pong * { animation-play-state: running; }
+
+/* ---------- Scroll reveals ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity var(--dur-slow) var(--ease-out),
+    transform var(--dur-slow) var(--ease-out);
+  transition-delay: calc(var(--reveal-delay, 0) * 70ms);
+}
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* ---------- Split text ---------- */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+  /* Keeps descenders and the gradient from being clipped */
+  padding-bottom: .12em;
+  margin-bottom: -.12em;
+}
+.split-inner {
+  display: inline-block;
+  will-change: transform;
+}
+.js .split-ready .split-inner {
+  transform: translateY(105%);
+  opacity: 0;
+}
+.js .split-ready.is-visible .split-inner {
+  transform: none;
+  opacity: 1;
+  transition:
+    transform .8s var(--ease-out),
+    opacity .6s var(--ease-out);
+  transition-delay: calc(var(--w, 0) * 55ms);
+}
+
+/* Never split a gradient heading.
+   A *transformed descendant* stops the browser painting an ancestor's
+   `background-clip:text` background — the text renders fully transparent.
+   Gradient headings therefore animate as one element (`.reveal`), where the
+   transform sits on the same node as the clipped background and is safe. */
+.gradient-text [data-split] { display: inline; }
+
+/* ---------- Timeline rail progress ---------- */
+.timeline-item.is-visible .timeline-dot {
+  animation: haloPulse 2.6s ease-in-out .3s 2;
+}
+
+/* ============================================================
+   HOVER — only for devices that genuinely hover.
+   Touch devices get :active + .is-touched instead (see below).
+   ============================================================ */
+@media (hover: hover) and (pointer: fine) {
+
+  .button:hover { transform: translateY(-3px); }
+  .button:hover::after { opacity: 1; animation: sheen .8s var(--ease); }
+  .button-primary:hover { box-shadow: 0 18px 44px rgba(14, 165, 233, .28), 0 0 34px rgba(139, 92, 246, .16); }
+  .button-ghost:hover { border-color: rgba(56, 189, 248, .4); background: rgba(15, 23, 42, .82); }
+  .button:hover .button-icon { transform: translate(2px, -2px); }
+  .button-ghost[download]:hover .button-icon,
+  .button-primary[download]:hover .button-icon { transform: translateY(2px); }
+
+  .lang-switch:hover, .icon-button:hover, .palette-hint:hover, .nav-toggle:hover {
+    border-color: rgba(56, 189, 248, .4);
+    color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .fact:hover {
+    transform: translateX(5px);
+    border-color: rgba(56, 189, 248, .26);
+    background: var(--surface-2);
+  }
+
+  .chip-filter:hover {
+    color: var(--text);
+    border-color: rgba(56, 189, 248, .3);
+    transform: translateY(-2px);
+  }
+
+  .tech-card:hover {
+    z-index: 2;
+    transform: translateY(-6px);
+    border-color: color-mix(in srgb, var(--accent-card) 55%, transparent);
+    box-shadow:
+      0 20px 44px rgba(0, 0, 0, .34),
+      0 0 34px color-mix(in srgb, var(--accent-card) 16%, transparent);
+  }
+  .tech-card:hover::before { opacity: 1; }
+  .tech-card:hover .tech-icon {
+    transform: translateY(-4px) scale(1.08);
+    border-color: color-mix(in srgb, var(--accent-card) 40%, transparent);
+    box-shadow: 0 0 26px color-mix(in srgb, var(--accent-card) 22%, transparent);
+  }
+
+  .concepts-list li:hover {
+    color: var(--accent);
+    border-color: rgba(56, 189, 248, .3);
+    transform: translateY(-2px);
+  }
+
+  .project:hover {
+    border-color: rgba(56, 189, 248, .26);
+    box-shadow: 0 24px 64px rgba(0, 0, 0, .3);
+    transform: translateY(-4px);
+  }
+  .project-link:hover svg { transform: translate(3px, -3px); }
+
+  .learning-card:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in srgb, var(--accent-card) 45%, transparent);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, .28);
+  }
+  .learning-card:hover::before { opacity: 1; }
+
+  .focus-row:hover {
+    border-color: rgba(56, 189, 248, .26);
+    background: var(--surface-2);
+  }
+  .focus-row:hover i { transform: scaleX(1); }
+
+  .palette-item:hover { background: rgba(56, 189, 248, .09); color: var(--text); }
+}
+
+/* ============================================================
+   TOUCH — feedback without hover
+   ============================================================ */
+@media (hover: none), (pointer: coarse) {
+
+  .tech-card:active,
+  .learning-card:active,
+  .project:active { transform: scale(.98); }
+
+  .fact:active { background: var(--surface-2); }
+
+  /* Cards lit while centred in the viewport (set by IntersectionObserver) */
+  .tech-card.is-touched,
+  .learning-card.is-touched {
+    border-color: color-mix(in srgb, var(--accent-card) 38%, transparent);
+    box-shadow: 0 0 26px color-mix(in srgb, var(--accent-card) 10%, transparent);
+  }
+  .tech-card.is-touched .tech-icon {
+    border-color: color-mix(in srgb, var(--accent-card) 30%, transparent);
+  }
+
+  /* Fill the focus underline once the row scrolls in */
+  .focus-row.is-visible i { transform: scaleX(1); }
+
+  /* Pointer-driven layers make no sense here */
+  .cursor-glow { display: none; }
+
+  /* Comfortable tap targets. Inline links get vertical padding rather than
+     a fixed height so they still sit correctly in a line of text. */
+  .hero-socials a,
+  .contact-links a,
+  .footer-inner a:not(.back-top) {
+    display: inline-block;
+    padding-block: .8rem;
+  }
+  .back-top { width: 46px; height: 46px; }
+  .hero-socials { gap: .2rem .8rem; }
+  .contact-links { gap: .2rem 1.2rem; }
+
+  .project-link { padding-block: .9rem; }
+  .chip-filter { min-height: 46px; }
+  .brand { min-height: 46px; align-items: center; }
+  .palette-hint { min-width: 46px; }
+  .role-targets li,
+  .concepts-list li { padding-block: .55em; }
+}
+
+/* Keyboard parity for the card hover treatment */
+.tech-card:focus-visible,
+.learning-card:focus-visible,
+.project:focus-within {
+  border-color: color-mix(in srgb, var(--accent-card, var(--accent)) 50%, transparent);
+}
+
+/* ============================================================
+   REDUCED MOTION — everything still legible and usable
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+
+  html { scroll-behavior: auto; }
+
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Show all content immediately rather than leaving it mid-transition */
+  .js .reveal,
+  .js .split-ready .split-inner {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .split-word { overflow: visible; }
+
+  /* Drop the ambient layers entirely */
+  #bg-canvas,
+  .cursor-glow,
+  .hero-grid-floor,
+  .portrait-scan { display: none; }
+
+  .aurora { opacity: .3; }
+
+  /* A steady caret rather than a blinking one */
+  .caret { opacity: 1; }
+
+  .focus-row i { transform: scaleX(1); }
+}
