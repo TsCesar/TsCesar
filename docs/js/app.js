@@ -54,60 +54,72 @@
   const icon = (path) => DEVICON + path;
 
   /* Confirmed stack. cat = one or more filter groups. */
+  /* Confirmed stack.
+     `cat`  = one of the seven groups rendered below the core block.
+     `core` = shown in the highlighted Core Stack row as well. */
   const TECH = [
-    /* — Languages & Web — */
-    { name: "Java",          cat: "languages",          accent: "#ED8B00", icon: icon("java/java-original.svg"),               role: { en: "Programming language",       es: "Lenguaje de programación" } },
-    { name: "Kotlin",        cat: "languages",          accent: "#7F52FF", icon: icon("kotlin/kotlin-original.svg"),           role: { en: "JVM · Android",              es: "JVM · Android" } },
-    { name: "Python",        cat: "languages",          accent: "#3776AB", icon: icon("python/python-original.svg"),           role: { en: "Programming · Networking",   es: "Programación · Redes" } },
-    { name: "JavaScript",    cat: "languages",          accent: "#F7DF1E", icon: icon("javascript/javascript-original.svg"),   role: { en: "Web development",            es: "Desarrollo web" } },
-    { name: "TypeScript",    cat: "languages",          accent: "#3178C6", icon: icon("typescript/typescript-original.svg"),   role: { en: "Typed JavaScript",           es: "JavaScript tipado" } },
-    { name: "SQL",           cat: "languages backend",  accent: "#38BDF8", fallback: "SQL",                                    role: { en: "Queries & data definition",  es: "Consultas y definición de datos" } },
-    { name: "Solidity",      cat: "languages game",     accent: "#A1A1AA", icon: icon("solidity/solidity-original.svg"),       role: { en: "Smart contracts",            es: "Smart contracts" } },
-    { name: "HTML5",         cat: "languages",          accent: "#E34F26", icon: icon("html5/html5-original.svg"),             role: { en: "Semantic markup",            es: "Marcado semántico" } },
-    { name: "CSS3",          cat: "languages",          accent: "#1572B6", icon: icon("css3/css3-original.svg"),               role: { en: "Responsive styling",         es: "Estilos responsive" } },
-    { name: "JSON",          cat: "languages",          accent: "#F8FAFC", fallback: "{ }",                                    role: { en: "Data interchange",           es: "Intercambio de datos" } },
-    { name: "XML",           cat: "languages",          accent: "#F97316", icon: icon("xml/xml-original.svg"), fallback: "XML",role: { en: "Structured data",            es: "Datos estructurados" } },
-    { name: "XHTML",         cat: "languages",          accent: "#2563EB", fallback: "XH",                                     role: { en: "Web markup",                 es: "Marcado web" } },
-    { name: "XBase",         cat: "languages backend",  accent: "#0891B2", fallback: "XB",                                     role: { en: "Legacy data & programming",  es: "Datos y programación legacy" } },
-    { name: "FoxPro",        cat: "languages backend",  accent: "#7C3AED", fallback: "FP",                                     role: { en: "Legacy applications",        es: "Aplicaciones legacy" } },
-    { name: "Clipper",       cat: "languages backend",  accent: "#64748B", fallback: "CL",                                     role: { en: "Legacy xBase environment",   es: "Entorno xBase legacy" } },
+    /* ── Languages & Web ── */
+    { name: "Java",           cat: "web",    core: true, accent: "#ED8B00", icon: icon("java/java-original.svg"),             role: { en: "Programming language",         es: "Lenguaje de programación" } },
+    { name: "Kotlin",         cat: "web",    core: true, accent: "#7F52FF", icon: icon("kotlin/kotlin-original.svg"),         role: { en: "JVM · Android",                es: "JVM · Android" } },
+    { name: "Python",         cat: "web",    core: true, accent: "#3776AB", icon: icon("python/python-original.svg"),         role: { en: "Programming · Networking",     es: "Programación · Redes" } },
+    { name: "JavaScript",     cat: "web",    accent: "#F7DF1E", icon: icon("javascript/javascript-original.svg"),             role: { en: "Web development",              es: "Desarrollo web" } },
+    { name: "TypeScript",     cat: "web",    accent: "#3178C6", icon: icon("typescript/typescript-original.svg"),             role: { en: "Typed JavaScript",             es: "JavaScript tipado" } },
+    { name: "HTML5",          cat: "web",    accent: "#E34F26", icon: icon("html5/html5-original.svg"),                       role: { en: "Semantic markup",              es: "Marcado semántico" } },
+    { name: "CSS3",           cat: "web",    accent: "#1572B6", icon: icon("css3/css3-original.svg"),                         role: { en: "Responsive styling",           es: "Estilos responsive" } },
+    { name: "JSON",           cat: "web",    accent: "#F8FAFC", fallback: "{ }",                                              role: { en: "Data interchange",             es: "Intercambio de datos" } },
+    { name: "XML",            cat: "web",    accent: "#F97316", icon: icon("xml/xml-original.svg"), fallback: "XML",          role: { en: "Structured data",              es: "Datos estructurados" } },
+    { name: "XHTML",          cat: "web",    accent: "#2563EB", fallback: "XH",                                               role: { en: "Web markup",                   es: "Marcado web" } },
 
-    /* — Backend & Data — */
-    { name: "Spring Boot",   cat: "backend",            accent: "#6DB33F", icon: icon("spring/spring-original.svg"),           role: { en: "Java backend framework",     es: "Framework backend Java" } },
-    { name: "Hibernate",     cat: "backend",            accent: "#BCA37F", icon: icon("hibernate/hibernate-original.svg"), fallback: "Hb", role: { en: "ORM · Persistence",     es: "ORM · Persistencia" } },
-    { name: "JDBC",          cat: "backend",            accent: "#F59E0B", fallback: "JD",                                     role: { en: "Java database access",       es: "Acceso Java a BBDD" } },
-    { name: "REST APIs",     cat: "backend",            accent: "#14B8A6", fallback: "API",                                    role: { en: "API architecture",           es: "Arquitectura de APIs" } },
-    { name: "MySQL",         cat: "backend",            accent: "#4479A1", icon: icon("mysql/mysql-original.svg"),             role: { en: "Relational database",        es: "Base de datos relacional" } },
-    { name: "SQLite",        cat: "backend",            accent: "#0F80CC", icon: icon("sqlite/sqlite-original.svg"),           role: { en: "Embedded SQL database",      es: "Base SQL embebida" } },
-    { name: "DBF",           cat: "backend",            accent: "#0F766E", fallback: "DBF",                                    role: { en: "Legacy data files",          es: "Ficheros de datos legacy" } },
-    { name: "JUnit 5",       cat: "backend",            accent: "#25A162", icon: icon("junit/junit-original.svg"), fallback: "J5", role: { en: "Unit testing",            es: "Testing unitario" } },
-    { name: "phpMyAdmin",    cat: "backend",            accent: "#F59E0B", fallback: "pMA",                                    role: { en: "Database administration",    es: "Administración de BBDD" } },
-    { name: "XAMPP",         cat: "backend tooling",    accent: "#FB7A24", fallback: "X",                                      role: { en: "Local development stack",    es: "Entorno local de desarrollo" } },
+    /* ── Backend & Data ── */
+    { name: "SQL",            cat: "data",   core: true, accent: "#38BDF8", fallback: "SQL",                                  role: { en: "Queries & data definition",    es: "Consultas y definición de datos" } },
+    { name: "Spring Boot",    cat: "data",   core: true, accent: "#6DB33F", icon: icon("spring/spring-original.svg"),         role: { en: "Java backend framework",       es: "Framework backend Java" } },
+    { name: "MySQL",          cat: "data",   core: true, accent: "#4479A1", icon: icon("mysql/mysql-original.svg"),           role: { en: "Relational database",          es: "Base de datos relacional" } },
+    { name: "Hibernate",      cat: "data",   accent: "#BCA37F", icon: icon("hibernate/hibernate-original.svg"), fallback: "Hb", role: { en: "ORM · Persistence",          es: "ORM · Persistencia" } },
+    { name: "JDBC",           cat: "data",   accent: "#F59E0B", fallback: "JD",                                               role: { en: "Java database access",         es: "Acceso Java a BBDD" } },
+    { name: "REST APIs",      cat: "data",   accent: "#14B8A6", fallback: "API",                                              role: { en: "API architecture",             es: "Arquitectura de APIs" } },
+    { name: "SQLite",         cat: "data",   accent: "#0F80CC", icon: icon("sqlite/sqlite-original.svg"),                     role: { en: "Embedded SQL database",        es: "Base SQL embebida" } },
+    { name: "JUnit 5",        cat: "data",   accent: "#25A162", icon: icon("junit/junit-original.svg"), fallback: "J5",       role: { en: "Unit testing",                 es: "Testing unitario" } },
+    { name: "phpMyAdmin",     cat: "data",   accent: "#F59E0B", fallback: "pMA",                                              role: { en: "Database administration",      es: "Administración de BBDD" } },
+    { name: "XAMPP",          cat: "data",   accent: "#FB7A24", fallback: "X",                                                role: { en: "Local development stack",      es: "Entorno local de desarrollo" } },
 
-    /* — Mobile & Tooling — */
-    { name: "Android SDK",   cat: "tooling",            accent: "#3DDC84", icon: icon("android/android-original.svg"),         role: { en: "Android development",        es: "Desarrollo Android" } },
-    { name: "Android Studio",cat: "tooling",            accent: "#3DDC84", icon: icon("androidstudio/androidstudio-original.svg"), role: { en: "Android IDE",            es: "IDE Android" } },
-    { name: "Gradle",        cat: "tooling",            accent: "#1B9AAA", icon: icon("gradle/gradle-original.svg"),           role: { en: "Build automation",           es: "Automatización de build" } },
-    { name: "Maven",         cat: "tooling",            accent: "#C71A36", icon: icon("maven/maven-original.svg"),             role: { en: "Java build & dependencies",  es: "Build y dependencias Java" } },
-    { name: "Docker",        cat: "tooling",            accent: "#2496ED", icon: icon("docker/docker-original.svg"),           role: { en: "Containers",                 es: "Contenedores" } },
-    { name: "Git",           cat: "tooling",            accent: "#F05032", icon: icon("git/git-original.svg"),                 role: { en: "Version control",            es: "Control de versiones" } },
-    { name: "GitHub",        cat: "tooling",            accent: "#E5E7EB", icon: icon("github/github-original.svg"),           role: { en: "Repositories & collaboration", es: "Repositorios y colaboración" } },
-    { name: "GitHub Actions",cat: "tooling",            accent: "#2088FF", icon: icon("githubactions/githubactions-original.svg"), fallback: "GA", role: { en: "CI/CD automation", es: "Automatización CI/CD" } },
-    { name: "PowerShell",    cat: "tooling",            accent: "#5391FE", icon: icon("powershell/powershell-original.svg"), fallback: "PS", role: { en: "Automation & scripting", es: "Automatización y scripting" } },
-    { name: "Linux",         cat: "tooling",            accent: "#FCC624", icon: icon("linux/linux-original.svg"),             role: { en: "Operating system",           es: "Sistema operativo" } },
-    { name: "Windows",       cat: "tooling",            accent: "#0078D6", icon: icon("windows11/windows11-original.svg"),     role: { en: "Operating system",           es: "Sistema operativo" } },
-    { name: "IntelliJ IDEA", cat: "tooling",            accent: "#EC4899", icon: icon("intellij/intellij-original.svg"),       role: { en: "Java / Kotlin IDE",          es: "IDE Java / Kotlin" } },
-    { name: "VS Code",       cat: "tooling",            accent: "#007ACC", icon: icon("vscode/vscode-original.svg"),           role: { en: "Code editor",                es: "Editor de código" } },
-    { name: "Eclipse",       cat: "tooling",            accent: "#8B7FD4", icon: icon("eclipse/eclipse-original.svg"),         role: { en: "Java IDE",                   es: "IDE Java" } },
-    { name: "NetBeans",      cat: "tooling",            accent: "#1B6AC6", fallback: "NB",                                     role: { en: "Java IDE",                   es: "IDE Java" } },
-    { name: "PyCharm",       cat: "tooling",            accent: "#21D789", icon: icon("pycharm/pycharm-original.svg"),         role: { en: "Python IDE",                 es: "IDE Python" } },
-    { name: "draw.io",       cat: "tooling",            accent: "#F08705", fallback: "dio",                                    role: { en: "ER & UML diagrams",          es: "Diagramas E/R y UML" } },
+    /* ── Mobile ── */
+    { name: "Android SDK",    cat: "mobile", accent: "#3DDC84", icon: icon("android/android-original.svg"),                   role: { en: "Android development",          es: "Desarrollo Android" } },
+    { name: "Android Studio", cat: "mobile", accent: "#3DDC84", icon: icon("androidstudio/androidstudio-original.svg"),       role: { en: "Android IDE",                  es: "IDE Android" } },
 
-    /* — Game & Blockchain — */
-    { name: "Unreal Engine 5", cat: "game",             accent: "#C4B5FD", icon: icon("unrealengine/unrealengine-original.svg"), role: { en: "Game development",         es: "Desarrollo de videojuegos" } },
-    { name: "Blueprints",      cat: "game",             accent: "#0EA5E9", fallback: "BP",                                     role: { en: "Visual scripting",           es: "Scripting visual" } },
-    { name: "Smart Contracts", cat: "game",             accent: "#8B5CF6", fallback: "SC",                                     role: { en: "Blockchain development",     es: "Desarrollo blockchain" } }
+    /* ── DevOps & Tooling ── */
+    { name: "Docker",         cat: "devops", core: true, accent: "#2496ED", icon: icon("docker/docker-original.svg"),         role: { en: "Containers",                   es: "Contenedores" } },
+    { name: "Git",            cat: "devops", core: true, accent: "#F05032", icon: icon("git/git-original.svg"),               role: { en: "Version control",              es: "Control de versiones" } },
+    { name: "GitHub",         cat: "devops", accent: "#E5E7EB", icon: icon("github/github-original.svg"),                     role: { en: "Repositories & collaboration", es: "Repositorios y colaboración" } },
+    { name: "GitHub Actions", cat: "devops", accent: "#2088FF", icon: icon("githubactions/githubactions-original.svg"), fallback: "GA", role: { en: "CI/CD automation",     es: "Automatización CI/CD" } },
+    { name: "Gradle",         cat: "devops", accent: "#1B9AAA", icon: icon("gradle/gradle-original.svg"),                     role: { en: "Build automation",             es: "Automatización de build" } },
+    { name: "Maven",          cat: "devops", accent: "#C71A36", icon: icon("maven/maven-original.svg"),                       role: { en: "Java build & dependencies",    es: "Build y dependencias Java" } },
+    { name: "PowerShell",     cat: "devops", accent: "#5391FE", icon: icon("powershell/powershell-original.svg"), fallback: "PS", role: { en: "Automation & scripting",    es: "Automatización y scripting" } },
+    { name: "Linux",          cat: "devops", accent: "#FCC624", icon: icon("linux/linux-original.svg"),                       role: { en: "Operating system",             es: "Sistema operativo" } },
+    { name: "Windows",        cat: "devops", accent: "#0078D6", icon: icon("windows11/windows11-original.svg"),               role: { en: "Operating system",             es: "Sistema operativo" } },
+    { name: "IntelliJ IDEA",  cat: "devops", accent: "#EC4899", icon: icon("intellij/intellij-original.svg"),                 role: { en: "Java / Kotlin IDE",            es: "IDE Java / Kotlin" } },
+    { name: "VS Code",        cat: "devops", accent: "#007ACC", icon: icon("vscode/vscode-original.svg"),                     role: { en: "Code editor",                  es: "Editor de código" } },
+    { name: "Eclipse",        cat: "devops", accent: "#8B7FD4", icon: icon("eclipse/eclipse-original.svg"),                   role: { en: "Java IDE",                     es: "IDE Java" } },
+    { name: "NetBeans",       cat: "devops", accent: "#1B6AC6", fallback: "NB",                                               role: { en: "Java IDE",                     es: "IDE Java" } },
+    { name: "PyCharm",        cat: "devops", accent: "#21D789", icon: icon("pycharm/pycharm-original.svg"),                   role: { en: "Python IDE",                   es: "IDE Python" } },
+    { name: "draw.io",        cat: "devops", accent: "#F08705", fallback: "dio",                                              role: { en: "ER & UML diagrams",            es: "Diagramas E/R y UML" } },
+
+    /* ── Game Development ── */
+    { name: "Unreal Engine 5", cat: "game",  accent: "#C4B5FD", icon: icon("unrealengine/unrealengine-original.svg"),         role: { en: "Game development",             es: "Desarrollo de videojuegos" } },
+    { name: "Blueprints",      cat: "game",  accent: "#0EA5E9", fallback: "BP",                                               role: { en: "Visual scripting",             es: "Scripting visual" } },
+
+    /* ── Blockchain ── */
+    { name: "Solidity",        cat: "chain", accent: "#A1A1AA", icon: icon("solidity/solidity-original.svg"),                 role: { en: "Smart contracts",              es: "Smart contracts" } },
+    { name: "Smart Contracts", cat: "chain", accent: "#8B5CF6", fallback: "SC",                                               role: { en: "Blockchain development",       es: "Desarrollo blockchain" } },
+
+    /* ── Legacy / Data ── */
+    { name: "XBase",           cat: "legacy", accent: "#0891B2", fallback: "XB",                                              role: { en: "Legacy data & programming",    es: "Datos y programación legacy" } },
+    { name: "FoxPro",          cat: "legacy", accent: "#7C3AED", fallback: "FP",                                              role: { en: "Legacy applications",          es: "Aplicaciones legacy" } },
+    { name: "Clipper",         cat: "legacy", accent: "#64748B", fallback: "CL",                                              role: { en: "Legacy xBase environment",     es: "Entorno xBase legacy" } },
+    { name: "DBF",             cat: "legacy", accent: "#0F766E", fallback: "DBF",                                             role: { en: "Legacy data files",            es: "Ficheros de datos legacy" } }
   ];
+
+  /* Order of the groups rendered under the core block. */
+  const TECH_GROUPS = ["web", "data", "mobile", "devops", "game", "chain", "legacy"];
 
   /* Introductory exposure only — deliberately kept separate. */
   const LEARNING = [
@@ -144,16 +156,14 @@
     en: [
       "Junior Software Developer",
       "Java · Kotlin · Backend",
-      "SQL · Databases · Enterprise software",
-      "Android · Docker · Testing",
-      "Always building, always learning"
+      "SQL · Databases · Enterprise Software",
+      "Android · Docker · Testing"
     ],
     es: [
       "Desarrollador de Software Junior",
       "Java · Kotlin · Backend",
       "SQL · Bases de datos · Software empresarial",
-      "Android · Docker · Testing",
-      "Construyendo y aprendiendo constantemente"
+      "Android · Docker · Testing"
     ]
   };
 
@@ -207,9 +217,18 @@
 
       "stack.kicker": "Tech stack",
       "stack.title": "Everything I've worked with, organised by area.",
-      "stack.subtitle": "Confirmed technologies only. Anything I'm still learning lives in its own section further down.",
-      "stack.all": "All", "stack.languages": "Languages & Web", "stack.backend": "Backend & Data",
-      "stack.tooling": "Mobile & Tooling", "stack.game": "Game & Blockchain",
+      "stack.subtitle": "Confirmed technologies only. Anything I'm still exploring lives in its own section further down.",
+      "stack.core": "Core stack",
+      "stack.coreNote": "The technologies I work with most and would bring to a role from day one.",
+      "stack.additional": "Additional technologies & tooling",
+      "stack.all": "All",
+      "stack.group.web": "Languages & Web",
+      "stack.group.data": "Backend & Data",
+      "stack.group.mobile": "Mobile",
+      "stack.group.devops": "DevOps & Tooling",
+      "stack.group.game": "Game Development",
+      "stack.group.chain": "Blockchain",
+      "stack.group.legacy": "Legacy / Data",
       "stack.concepts": "Software engineering foundations",
       "stack.countAll": "{n} technologies",
       "stack.countFiltered": "{n} of {total} technologies",
@@ -241,11 +260,11 @@
       "projects.pong": "Arcade-style Pong built in Python to practise game loops, collision and input handling, and how to structure a small interactive application.",
       "projects.viewRepo": "View repository",
       "projects.all": "View all repositories",
-      "projects.updated": "updated {d}",
+      "projects.updated": "Updated {d}",
 
       "learning.kicker": "Currently exploring",
-      "learning.title": "Technologies I'm building introductory knowledge in.",
-      "learning.subtitle": "Deliberately kept apart from my main stack. These are things I've had contact with and am still learning — not technologies I'd claim to know well.",
+      "learning.title": "Technologies I'm currently exploring.",
+      "learning.subtitle": "Deliberately kept apart from my core stack. These are technologies I've had contact with and am still exploring — not ones I'd claim to know well.",
       "learning.level": "Introductory knowledge",
 
       "focus.kicker": "Current focus",
@@ -325,9 +344,18 @@
 
       "stack.kicker": "Stack tecnológico",
       "stack.title": "Todo lo que he trabajado, organizado por áreas.",
-      "stack.subtitle": "Solo tecnologías confirmadas. Lo que todavía estoy aprendiendo tiene su propia sección más abajo.",
-      "stack.all": "Todo", "stack.languages": "Lenguajes y Web", "stack.backend": "Backend y Datos",
-      "stack.tooling": "Mobile y Herramientas", "stack.game": "Videojuegos y Blockchain",
+      "stack.subtitle": "Solo tecnologías confirmadas. Lo que todavía estoy explorando tiene su propia sección más abajo.",
+      "stack.core": "Stack principal",
+      "stack.coreNote": "Las tecnologías con las que más trabajo y que aportaría desde el primer día.",
+      "stack.additional": "Tecnologías y herramientas adicionales",
+      "stack.all": "Todo",
+      "stack.group.web": "Lenguajes y Web",
+      "stack.group.data": "Backend y Datos",
+      "stack.group.mobile": "Mobile",
+      "stack.group.devops": "DevOps y Herramientas",
+      "stack.group.game": "Desarrollo de videojuegos",
+      "stack.group.chain": "Blockchain",
+      "stack.group.legacy": "Legacy / Datos",
       "stack.concepts": "Fundamentos de ingeniería de software",
       "stack.countAll": "{n} tecnologías",
       "stack.countFiltered": "{n} de {total} tecnologías",
@@ -359,11 +387,11 @@
       "projects.pong": "Pong estilo arcade desarrollado en Python para practicar el bucle de juego, la detección de colisiones, la gestión de entrada y la estructura de una aplicación interactiva pequeña.",
       "projects.viewRepo": "Ver repositorio",
       "projects.all": "Ver todos los repositorios",
-      "projects.updated": "act. {d}",
+      "projects.updated": "Actualizado {d}",
 
       "learning.kicker": "Actualmente explorando",
-      "learning.title": "Tecnologías en las que estoy adquiriendo conocimientos introductorios.",
-      "learning.subtitle": "Las mantengo separadas de mi stack principal a propósito. Son tecnologías con las que he tenido contacto y que sigo aprendiendo, no tecnologías que diría dominar.",
+      "learning.title": "Tecnologías que estoy explorando actualmente.",
+      "learning.subtitle": "Las mantengo separadas de mi stack principal a propósito. Son tecnologías con las que he tenido contacto y que sigo explorando, no tecnologías que diría dominar.",
       "learning.level": "Conocimiento introductorio",
 
       "focus.kicker": "En qué estoy centrado",
@@ -842,8 +870,17 @@
           return;
         }
 
-        target.textContent = "";
-        let line = 0, chars = 0, deleting = false;
+        target.textContent = lines[0].slice(0, 1);
+        let line = 0, chars = 1, deleting = false;
+
+        /* The terminal must never look empty. Deletion therefore stops at a
+           single character instead of running down to zero, and the next line
+           starts typing from that character immediately. */
+        const MIN_CHARS  = 1;
+        const TYPE_MS    = 55;
+        const DELETE_MS  = 26;
+        const HOLD_MS    = 1800;   // full sentence stays readable
+        const SWITCH_MS  = 140;    // brief beat before the next line
 
         const tick = () => {
           if (myToken !== token) return;               // a newer run took over
@@ -854,20 +891,23 @@
             target.textContent = text.slice(0, chars);
             if (chars >= text.length) {
               deleting = true;
-              timer = setTimeout(tick, 1600);
+              timer = setTimeout(tick, HOLD_MS);
               return;
             }
-            timer = setTimeout(tick, 55);
+            timer = setTimeout(tick, TYPE_MS);
           } else {
             chars -= 1;
-            target.textContent = text.slice(0, chars);
-            if (chars <= 0) {
+            target.textContent = text.slice(0, Math.max(chars, MIN_CHARS));
+            if (chars <= MIN_CHARS) {
               deleting = false;
               line = (line + 1) % lines.length;
-              timer = setTimeout(tick, 320);
+              chars = MIN_CHARS;
+              // Seed the next line straight away so nothing blanks out.
+              target.textContent = lines[line].slice(0, MIN_CHARS);
+              timer = setTimeout(tick, SWITCH_MS);
               return;
             }
-            timer = setTimeout(tick, 24);
+            timer = setTimeout(tick, DELETE_MS);
           }
         };
 
@@ -878,67 +918,127 @@
 
 
   /* ══════════════════════════════════════════════════════════
-   * 7 · TECH STACK — build once, then filter and re-label
+   * 7 · TECH STACK
+   *
+   * Two tiers: a highlighted Core Stack row, then the full set
+   * split into labelled category groups. Built once; filtering
+   * and language changes only toggle classes / text.
    * ══════════════════════════════════════════════════════════ */
 
   const Stack = (() => {
-    const grid = $("#tech-grid");
-    const countEl = $("[data-stack-count]");
-    let cards = [];
+    const coreGrid = $("#core-grid");
+    const groupsEl = $("#tech-groups");
+    const countEl  = $("[data-stack-count]");
+
+    let cards  = [];   // every small card, across all groups
+    let groups = [];   // { key, el, cards[] }
     let filter = "all";
 
+    /** Shared markup for a technology card. */
+    const buildCard = (item, isCore) => {
+      const li = document.createElement("li");
+      li.className = isCore ? "core-card" : "tech-card";
+      li.style.setProperty("--accent-card", item.accent);
+
+      const short = item.fallback || item.name.slice(0, 2);
+      const iconCls = isCore ? "core-icon" : "tech-icon";
+      const nameCls = isCore ? "core-name" : "tech-name";
+      const roleCls = isCore ? "core-role" : "tech-role";
+      const size    = isCore ? 56 : 40;
+
+      li.innerHTML =
+        '<span class="' + iconCls + '">' +
+          (item.icon
+            ? '<img src="' + item.icon + '" alt="" width="' + size + '" height="' + size + '" loading="lazy" decoding="async">'
+            : "") +
+          '<span class="tech-fallback">' + escapeHtml(short) + "</span>" +
+        "</span>" +
+        '<h4 class="' + nameCls + '">' + escapeHtml(item.name) + "</h4>" +
+        '<p class="' + roleCls + '"></p>';
+
+      if (!item.icon) li.classList.add("has-fallback");
+
+      const img = li.querySelector("img");
+      if (img) {
+        // Fall back to the monogram if the icon CDN is unreachable.
+        img.addEventListener("error", () => li.classList.add("has-fallback"), { once: true });
+      }
+
+      li._data = item;
+      return li;
+    };
+
     const build = () => {
-      if (!grid) return;
+      if (coreGrid) {
+        const frag = document.createDocumentFragment();
+        TECH.filter((t) => t.core).forEach((item) => {
+          const li = buildCard(item, true);
+          cards.push(li);
+          frag.appendChild(li);
+        });
+        coreGrid.appendChild(frag);
+      }
+
+      if (!groupsEl) return;
 
       const frag = document.createDocumentFragment();
 
-      TECH.forEach((item) => {
-        const li = document.createElement("li");
-        li.className = "tech-card";
-        li.style.setProperty("--accent-card", item.accent);
-        li.dataset.cat = item.cat;
+      TECH_GROUPS.forEach((key) => {
+        const items = TECH.filter((t) => t.cat === key);
+        if (!items.length) return;
 
-        const short = item.fallback || item.name.slice(0, 2);
+        const section = document.createElement("div");
+        section.className = "tech-group";
+        section.dataset.group = key;
 
-        li.innerHTML =
-          '<span class="tech-icon">' +
-            (item.icon
-              ? '<img src="' + item.icon + '" alt="" width="40" height="40" loading="lazy" decoding="async">'
-              : "") +
-            '<span class="tech-fallback">' + escapeHtml(short) + "</span>" +
-          "</span>" +
-          '<h3 class="tech-name">' + escapeHtml(item.name) + "</h3>" +
-          '<p class="tech-role"></p>';
+        const head = document.createElement("h3");
+        head.className = "tech-group-title";
+        head.innerHTML =
+          '<span data-group-label></span>' +
+          '<span class="tech-group-count">' + items.length + "</span>";
 
-        if (!item.icon) li.classList.add("has-fallback");
+        const ul = document.createElement("ul");
+        ul.className = "tech-grid";
+        ul.setAttribute("data-spotlight", "");
 
-        const img = li.querySelector("img");
-        if (img) {
-          // Show the monogram if the CDN is unreachable.
-          img.addEventListener("error", () => li.classList.add("has-fallback"), { once: true });
-        } else {
-          li.querySelector(".tech-fallback").style.display = "block";
-        }
+        const groupCards = [];
+        items.forEach((item) => {
+          const li = buildCard(item, false);
+          cards.push(li);
+          groupCards.push(li);
+          ul.appendChild(li);
+        });
 
-        li._data = item;
-        cards.push(li);
-        frag.appendChild(li);
+        section.appendChild(head);
+        section.appendChild(ul);
+        frag.appendChild(section);
+
+        groups.push({ key: key, el: section, cards: groupCards });
       });
 
-      grid.appendChild(frag);
+      groupsEl.appendChild(frag);
     };
 
+    /** Language pass: only rewrites text, never rebuilds the DOM. */
     const relabel = () => {
       cards.forEach((li) => {
         const role = li._data.role;
-        li.querySelector(".tech-role").textContent = role[lang] || role.en;
+        const p = li.querySelector(".tech-role, .core-role");
+        if (p) p.textContent = role[lang] || role.en;
       });
+
+      groups.forEach((g) => {
+        const label = g.el.querySelector("[data-group-label]");
+        if (label) label.textContent = t("stack.group." + g.key);
+      });
+
       updateCount();
     };
 
     const updateCount = () => {
       if (!countEl) return;
-      const shown = cards.filter((c) => !c.classList.contains("is-gone")).length;
+      const shown = groups.reduce(
+        (n, g) => n + (g.el.classList.contains("is-gone") ? 0 : g.cards.length), 0);
       countEl.textContent = filter === "all"
         ? t("stack.countAll", { n: TECH.length })
         : t("stack.countFiltered", { n: shown, total: TECH.length });
@@ -947,27 +1047,21 @@
     const applyFilter = (next) => {
       filter = next;
 
-      let shownIndex = 0;
-
-      cards.forEach((li) => {
-        const matches = next === "all" || li.dataset.cat.split(" ").indexOf(next) !== -1;
-
-        clearTimeout(li._timer);
+      groups.forEach((g) => {
+        const matches = next === "all" || g.key === next;
+        clearTimeout(g._timer);
 
         if (matches) {
-          li.classList.remove("is-gone");
-          // Force a reflow so the transition runs from the hidden state.
-          void li.offsetWidth;
-          const delay = Math.min(shownIndex * 18, 260);
-          shownIndex += 1;
-          li._timer = setTimeout(() => li.classList.remove("is-out"), delay);
+          g.el.classList.remove("is-gone");
+          void g.el.offsetWidth;              // restart the transition
+          g._timer = setTimeout(() => g.el.classList.remove("is-out"), 20);
         } else {
-          li.classList.add("is-out");
-          li._timer = setTimeout(() => li.classList.add("is-gone"), 260);
+          g.el.classList.add("is-out");
+          g._timer = setTimeout(() => g.el.classList.add("is-gone"), 240);
         }
       });
 
-      // Offsets shift once the grid has reflowed.
+      // Offsets move once the grids have reflowed.
       setTimeout(() => {
         Pointer.refreshSpotlight();
         updateCount();
@@ -989,7 +1083,6 @@
           applyFilter(btn.dataset.filter);
         });
 
-        // Arrow-key navigation across the filter row
         btn.addEventListener("keydown", (e) => {
           let next = null;
           if (e.key === "ArrowRight") next = buttons[(i + 1) % buttons.length];
@@ -1320,7 +1413,7 @@
     init() {
       if (canHover()) return;
 
-      const cards = $$(".tech-card, .learning-card");
+      const cards = $$(".tech-card, .core-card, .learning-card");
       if (!cards.length) return;
 
       const io = new IntersectionObserver((entries) => {
@@ -1610,6 +1703,21 @@
     $$(".orbit-chip img").forEach((img) => {
       img.addEventListener("error", () => img.parentElement.classList.add("has-fallback"), { once: true });
     });
+
+    /* Shortcut hint matches the platform: ⌘K on Apple, Ctrl K elsewhere.
+       The handler already accepts either modifier, so only the label changes.
+       `userAgentData.platform` is preferred; `platform` is deprecated but is
+       still the only thing older Safari exposes. */
+    (() => {
+      const raw = (navigator.userAgentData && navigator.userAgentData.platform) ||
+                  navigator.platform || navigator.userAgent || "";
+      const isApple = /mac|iphone|ipad|ipod/i.test(raw);
+      $$("[data-palette-mod]").forEach((el) => {
+        el.textContent = isApple ? "\u2318" : "Ctrl";
+        el.classList.toggle("is-symbol", isApple);
+      });
+      document.documentElement.dataset.os = isApple ? "apple" : "other";
+    })();
 
     // Respect a live change to the motion preference
     const onMotionChange = () => { Typing.restart(); };
