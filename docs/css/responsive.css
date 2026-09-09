@@ -20,6 +20,8 @@
   .about-grid { grid-template-columns: 1fr; }
   .about-facts { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 
+  .core-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
   .project-wide { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
   .project-wide .project-visual {
     border-right: 0;
@@ -125,6 +127,10 @@
     text-align: left;
   }
 
+  /* --- Stack + learning --- */
+  .core-grid    { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .learning-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
   /* --- Other layouts --- */
   .focus-layout { grid-template-columns: 1fr; }
   .contact-copy { max-width: 100%; }
@@ -165,6 +171,11 @@
   .stack-filters::-webkit-scrollbar { display: none; }
   .chip-filter { flex: none; scroll-snap-align: start; }
 
+  .core-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .core-card { min-height: 148px; }
+  .core-icon { width: 54px; }
+  .learning-grid { grid-template-columns: 1fr; }
+
   .tech-grid { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); }
   .tech-card { min-height: 124px; padding: .8rem .45rem; }
   .tech-role { display: none; }   /* keeps small cards legible */
@@ -189,6 +200,9 @@
   :root { --gutter: .85rem; }
 
   .hero-facts { grid-template-columns: 1fr; }
+  .core-grid { gap: .45rem; }
+  .core-card { min-height: 136px; padding: .9rem .5rem; }
+  .core-icon { width: 46px; }
   .tech-grid { grid-template-columns: repeat(2, 1fr); gap: .45rem; }
   .tech-card { min-height: 116px; }
   .tech-icon { width: 42px; }
