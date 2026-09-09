@@ -120,38 +120,55 @@
 .nav-links {
   display: flex;
   align-items: center;
-  gap: clamp(.9rem, 1.6vw, 1.6rem);
+  gap: clamp(.6rem, 1.3vw, 1.2rem);
 }
 .nav-links a {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: .45em;
-  padding-block: .3rem;
-  color: var(--text-3);
-  font-size: var(--fs-xs);
+  gap: .5em;
+  padding: .45rem .6rem;
+  border-radius: var(--r-sm);
+  color: var(--text-2);                 /* was --text-3: more contrast */
+  font-size: var(--fs-sm);              /* ~1px larger than v1 */
   font-weight: 600;
-  transition: color var(--dur-fast) var(--ease);
+  letter-spacing: -.005em;
+  transition: color var(--dur-fast) var(--ease), background-color var(--dur-fast) var(--ease);
 }
 .nav-idx {
-  color: rgba(56, 189, 248, .45);
+  color: rgba(56, 189, 248, .5);
   font-family: var(--font-mono);
-  font-size: .78em;
+  font-size: .74em;
+  font-weight: 700;
   transition: color var(--dur-fast);
 }
 .nav-links a::after {
   content: "";
   position: absolute;
-  left: 0; right: 100%;
-  bottom: -2px;
-  height: 1.5px;
+  left: .6rem; right: calc(100% - .6rem);
+  bottom: .15rem;
+  height: 2px;
   border-radius: 2px;
   background: linear-gradient(90deg, var(--accent), var(--accent-2));
   transition: right var(--dur) var(--ease);
 }
-.nav-links a:hover, .nav-links a.is-active { color: var(--text); }
-.nav-links a:hover .nav-idx, .nav-links a.is-active .nav-idx { color: var(--accent); }
-.nav-links a:hover::after, .nav-links a.is-active::after { right: 0; }
+.nav-links a:hover {
+  color: var(--text);
+  background-color: rgba(148, 163, 184, .07);
+}
+.nav-links a:hover .nav-idx { color: var(--accent); }
+.nav-links a:hover::after { right: calc(50% - .1rem); }
+
+/* Active section: brighter label, lit index and a full underline */
+.nav-links a.is-active {
+  color: var(--text);
+  background-color: rgba(14, 165, 233, .1);
+}
+.nav-links a.is-active .nav-idx { color: var(--accent); }
+.nav-links a.is-active::after {
+  right: .6rem;
+  box-shadow: 0 0 10px rgba(56, 189, 248, .55);
+}
 
 .nav-actions {
   display: flex;
@@ -186,9 +203,11 @@
   position: relative;
   display: grid;
   align-items: center;
-  min-height: 100svh;
-  padding-top: calc(var(--header-h) + var(--space-xl));
-  padding-bottom: var(--space-xl);
+  /* Capped: on very tall monitors a bare 100svh left a big dead band under
+     the fold. The hero still fills a normal screen. */
+  min-height: min(100svh, 920px);
+  padding-top: calc(var(--header-h) + var(--space-lg));
+  padding-bottom: var(--space-lg);
   overflow: hidden;
 }
 
@@ -306,31 +325,42 @@
   will-change: transform;
 }
 
+/* Soft light blobs.
+   These used `filter: blur(70px)`, which was the single most expensive thing
+   left on the page: three large layers had to be re-rasterised through a big
+   blur every frame. A radial-gradient with a transparent falloff produces the
+   same soft edge natively, with no filter pass at all. */
 .aurora {
   position: absolute;
   z-index: -1;
   border-radius: 50%;
-  filter: blur(70px);
   pointer-events: none;
   will-change: transform;
 }
 .aurora-1 {
-  width: min(620px, 68vw); height: min(300px, 34vw);
-  top: 6%; right: -8%;
-  background: linear-gradient(100deg, rgba(56, 189, 248, .30), rgba(139, 92, 246, .34));
-  opacity: .55;
+  width: min(760px, 78vw); height: min(400px, 42vw);
+  top: 2%; right: -14%;
+  background: radial-gradient(closest-side ellipse,
+    rgba(76, 142, 220, .34) 0%,
+    rgba(115, 92, 220, .24) 45%,
+    rgba(115, 92, 220, .07) 70%,
+    transparent 100%);
 }
 .aurora-2 {
-  width: min(460px, 58vw); height: min(240px, 30vw);
-  bottom: 8%; left: -10%;
-  background: radial-gradient(circle, rgba(236, 72, 153, .26), transparent 70%);
-  opacity: .5;
+  width: min(580px, 66vw); height: min(340px, 40vw);
+  bottom: 2%; left: -16%;
+  background: radial-gradient(closest-side circle,
+    rgba(224, 78, 160, .26) 0%,
+    rgba(224, 78, 160, .10) 48%,
+    transparent 100%);
 }
 .aurora-3 {
-  width: min(380px, 46vw); height: min(380px, 46vw);
-  top: 34%; left: 32%;
-  background: radial-gradient(circle, rgba(14, 165, 233, .16), transparent 70%);
-  opacity: .45;
+  width: min(520px, 56vw); height: min(520px, 56vw);
+  top: 28%; left: 28%;
+  background: radial-gradient(closest-side circle,
+    rgba(14, 165, 233, .17) 0%,
+    rgba(14, 165, 233, .06) 50%,
+    transparent 100%);
 }
 
 .scroll-hint {
