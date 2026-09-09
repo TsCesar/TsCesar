@@ -81,6 +81,14 @@
 .aurora-2             { animation-duration: 17s; animation-delay: -6s; }
 .aurora-3             { animation-duration: 21s; animation-delay: -3s; }
 .toast.is-visible     { animation: toastIn var(--dur) var(--ease); }
+
+/* Contact card: one soft glow pass as it enters the viewport, then it rests. */
+@keyframes contactGlow {
+  0%   { opacity: 0; transform: scale(.9); }
+  55%  { opacity: 1; transform: scale(1.04); }
+  100% { opacity: .85; transform: scale(1); }
+}
+.contact-card.is-visible .contact-glow { animation: contactGlow 1.6s var(--ease-out) both; }
 .palette-dialog       { animation: paletteIn .22s var(--ease-out); }
 
 /* Parallax rides on the `translate` property so it composes with, rather
@@ -199,6 +207,21 @@
     box-shadow: 0 0 26px color-mix(in srgb, var(--accent-card) 22%, transparent);
   }
 
+  .core-card:hover {
+    z-index: 2;
+    transform: translateY(-7px);
+    border-color: color-mix(in srgb, var(--accent-card) 60%, transparent);
+    box-shadow:
+      0 26px 56px rgba(0, 0, 0, .4),
+      0 0 44px color-mix(in srgb, var(--accent-card) 22%, transparent);
+  }
+  .core-card:hover::before { opacity: 1; }
+  .core-card:hover .core-icon {
+    transform: translateY(-5px) scale(1.09);
+    border-color: color-mix(in srgb, var(--accent-card) 55%, transparent);
+    box-shadow: 0 0 34px color-mix(in srgb, var(--accent-card) 30%, transparent);
+  }
+
   .concepts-list li:hover {
     color: var(--accent);
     border-color: rgba(56, 189, 248, .3);
@@ -211,6 +234,21 @@
     transform: translateY(-4px);
   }
   .project-link:hover svg { transform: translate(3px, -3px); }
+
+  /* Whole-card hover: the card is the link, so everything reacts together */
+  .project.is-linked:hover {
+    border-color: rgba(56, 189, 248, .42);
+    box-shadow:
+      0 26px 66px rgba(0, 0, 0, .34),
+      0 0 40px rgba(56, 189, 248, .12);
+    transform: translateY(-5px);
+  }
+  .project.is-linked:hover .project-link { color: var(--accent); }
+  .project.is-linked:hover .project-link svg { transform: translate(3px, -3px); }
+  .project.is-linked:hover .project-visual { background-color: rgba(56, 189, 248, .04); }
+  .project.is-linked:hover .viz,
+  .project.is-linked:hover .viz-pong { transform: scale(1.035); }
+  .project.is-linked:hover .project-index { color: rgba(125, 211, 252, .7); }
 
   .learning-card:hover {
     transform: translateY(-5px);
@@ -225,6 +263,14 @@
   }
   .focus-row:hover i { transform: scaleX(1); }
 
+  .contact-links a:hover {
+    color: var(--text);
+    border-color: rgba(56, 189, 248, .45);
+    background: rgba(14, 165, 233, .12);
+    transform: translateY(-2px);
+  }
+  .contact-links a:hover svg { opacity: 1; }
+
   .palette-item:hover { background: rgba(56, 189, 248, .09); color: var(--text); }
 }
 
@@ -234,6 +280,7 @@
 @media (hover: none), (pointer: coarse) {
 
   .tech-card:active,
+  .core-card:active,
   .learning-card:active,
   .project:active { transform: scale(.98); }
 
@@ -241,6 +288,7 @@
 
   /* Cards lit while centred in the viewport (set by IntersectionObserver) */
   .tech-card.is-touched,
+  .core-card.is-touched,
   .learning-card.is-touched {
     border-color: color-mix(in srgb, var(--accent-card) 38%, transparent);
     box-shadow: 0 0 26px color-mix(in srgb, var(--accent-card) 10%, transparent);
@@ -277,6 +325,7 @@
 
 /* Keyboard parity for the card hover treatment */
 .tech-card:focus-visible,
+.core-card:focus-visible,
 .learning-card:focus-visible,
 .project:focus-within {
   border-color: color-mix(in srgb, var(--accent-card, var(--accent)) 50%, transparent);
