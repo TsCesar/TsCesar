@@ -78,13 +78,16 @@
 .icon-button svg { width: 17px; height: 17px; fill: currentColor; }
 
 .palette-hint {
-  gap: .1rem;
-  padding-inline: .6rem;
-  color: var(--text-4);
+  gap: .35rem;
+  padding-inline: .65rem;
+  color: var(--text-3);
   font-family: var(--font-mono);
   font-size: var(--fs-2xs);
   font-weight: 600;
 }
+/* "Ctrl" is wider than the ⌘ glyph, so the two are balanced separately */
+.palette-hint-mod { letter-spacing: .02em; }
+.palette-hint-mod.is-symbol { font-size: 1.15em; line-height: 1; }
 .palette-hint-key { letter-spacing: .04em; }
 
 /* ---------- Panels ---------- */
@@ -176,10 +179,14 @@
 
 .portrait-halo {
   position: absolute;
-  inset: 8%;
+  inset: 4%;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(56, 189, 248, .3), rgba(139, 92, 246, .16) 45%, transparent 70%);
-  filter: blur(30px);
+  /* Gradient falloff instead of `filter: blur(30px)` — same glow, no filter pass */
+  background: radial-gradient(closest-side circle,
+    rgba(56, 189, 248, .26) 0%,
+    rgba(139, 92, 246, .16) 42%,
+    rgba(139, 92, 246, .05) 66%,
+    transparent 100%);
 }
 
 .portrait-ring {
@@ -352,15 +359,16 @@
 .stack-toolbar {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  gap: var(--space-xs);
-  margin-bottom: var(--space-md);
+  gap: var(--space-2xs) var(--space-xs);
+  margin-bottom: var(--space-sm);
 }
 .stack-filters {
   display: flex;
   flex-wrap: wrap;
   gap: .45rem;
+  margin-bottom: var(--space-md);
 }
 .chip-filter {
   min-height: 40px;
@@ -384,6 +392,176 @@
   font-family: var(--font-mono);
   font-size: var(--fs-2xs);
   letter-spacing: .06em;
+}
+
+/* ---------- Core stack (highlighted tier) ---------- */
+.core-block { margin-bottom: var(--space-lg); }
+
+.core-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .6rem 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+.core-title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  color: var(--accent);
+}
+.core-title::before {
+  content: "";
+  display: inline-block;
+  width: 22px; height: 1px;
+  margin-right: .7rem;
+  vertical-align: middle;
+  background: linear-gradient(90deg, transparent, var(--accent));
+}
+.core-note {
+  color: var(--text-3);
+  font-size: var(--fs-xs);
+}
+
+.core-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(.6rem, 1.2vw, 1rem);
+}
+
+.core-card {
+  --accent-card: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .7rem;
+  min-height: clamp(160px, 17vw, 200px);
+  padding: clamp(1.1rem, 2vw, 1.6rem) .8rem;
+  border: 1px solid rgba(148, 163, 184, .2);
+  border-radius: var(--r-xl);
+  background:
+    linear-gradient(150deg, rgba(15, 23, 42, .9), rgba(4, 7, 15, .7));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .04),
+    0 10px 30px rgba(0, 0, 0, .25);
+  text-align: center;
+  overflow: hidden;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease),
+              transform var(--dur) var(--ease);
+}
+
+/* A permanent, gentle accent wash so the tier reads as elevated even at rest */
+.core-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 80% at 50% 0%,
+    color-mix(in srgb, var(--accent-card) 13%, transparent),
+    transparent 62%
+  );
+}
+.core-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur) var(--ease);
+  background: radial-gradient(
+    200px circle at calc(var(--px, -999px) - var(--ox, 0px)) calc(var(--py, -999px) - var(--oy, 0px)),
+    color-mix(in srgb, var(--accent-card) 26%, transparent),
+    transparent 65%
+  );
+}
+
+.core-icon {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: clamp(60px, 7vw, 78px);
+  aspect-ratio: 1;
+  border: 1px solid color-mix(in srgb, var(--accent-card) 26%, transparent);
+  border-radius: var(--r-lg);
+  background: rgba(255, 255, 255, .045);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--accent-card) 12%, transparent);
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease), border-color var(--dur);
+}
+.core-icon img { width: 60%; height: 60%; object-fit: contain; }
+.core-card.has-fallback .core-icon img { display: none; }
+
+.core-name {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.core-role {
+  position: relative;
+  z-index: 1;
+  color: var(--text-3);
+  font-size: var(--fs-2xs);
+  line-height: 1.4;
+}
+
+/* ---------- Category groups ---------- */
+.additional-title {
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  color: var(--text-3);
+}
+
+.tech-groups {
+  display: grid;
+  gap: var(--space-md);
+}
+
+.tech-group {
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.tech-group.is-out { opacity: 0; transform: translateY(8px); }
+.tech-group.is-gone { display: none; }
+
+.tech-group-title {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  margin-bottom: var(--space-xs);
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: var(--fs-2xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+}
+.tech-group-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--line-1), transparent);
+}
+.tech-group-count {
+  order: 1;
+  padding: .15em .5em;
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-pill);
+  color: var(--text-4);
+  font-size: .9em;
+  letter-spacing: 0;
 }
 
 /* ---------- Tech grid ---------- */
@@ -465,13 +643,6 @@
   font-size: var(--fs-2xs);
   line-height: 1.35;
 }
-
-.tech-card.is-out {
-  opacity: 0;
-  transform: scale(.9);
-  pointer-events: none;
-}
-.tech-card.is-gone { display: none; }
 
 /* ---------- Concepts ---------- */
 .concepts { margin-top: var(--space-lg); }
@@ -657,6 +828,7 @@
   background:
     radial-gradient(circle at 50% 50%, rgba(56, 189, 248, .1), transparent 60%),
     rgba(2, 6, 23, .5);
+  transition: background-color var(--dur) var(--ease);
 }
 .project-wide .project-visual {
   border-bottom: 0;
@@ -679,7 +851,7 @@
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 78%, transparent);
 }
 
-.viz { width: 84%; max-width: 320px; height: auto; }
+.viz { width: 84%; max-width: 320px; height: auto; transition: transform var(--dur) var(--ease); }
 .viz-label {
   position: absolute;
   right: 1rem; bottom: .85rem;
@@ -715,6 +887,7 @@
   border-radius: 10px;
   background: rgba(2, 6, 23, .55);
   overflow: hidden;
+  transition: transform var(--dur) var(--ease);
 }
 .pong-net {
   position: absolute;
@@ -822,6 +995,28 @@
   transition: transform var(--dur) var(--ease);
 }
 
+/* "Stretched link": one real anchor whose ::after covers the whole card, so
+   the entire card is clickable while the DOM stays valid (no nested <a>) and
+   there is still exactly one tab stop with a visible focus ring.
+   The anchor itself must stay `position: static`, otherwise the overlay is
+   sized against the link instead of the card. */
+.project.is-linked { position: relative; }
+.project.is-linked .project-link { position: static; }
+.project-link.stretched::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: var(--r-xl);
+}
+
+/* The focus ring belongs on the card, not on the small inline link */
+.project.is-linked:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+.project-link.stretched:focus-visible { outline: none; }
+
 .projects-footer {
   display: flex;
   justify-content: center;
@@ -829,10 +1024,12 @@
 }
 
 /* ---------- Learning ---------- */
+/* Exactly 9 cards, so a fixed 3-column track gives a clean 3x3 on desktop.
+   `auto-fit` left Streamlit alone on a wide fourth-column row. */
 .learning-grid {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 265px), 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(.6rem, 1.2vw, .9rem);
 }
 .learning-card {
@@ -887,14 +1084,14 @@
 .learning-card > p { color: var(--text-3); font-size: var(--fs-xs); line-height: 1.55; }
 
 /* ---------- Focus list ---------- */
-.focus-list { display: grid; gap: .55rem; }
+.focus-list { display: grid; gap: .4rem; }
 .focus-row {
   position: relative;
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr);
+  grid-template-columns: 118px minmax(0, 1fr);
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.15rem;
+  padding: .8rem 1.1rem;
   border: 1px solid var(--line-1);
   border-radius: var(--r-md);
   background: var(--surface-1);
@@ -954,18 +1151,33 @@
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.2rem;
+  gap: .6rem;
   margin-top: var(--space-md);
   padding-top: var(--space-sm);
   border-top: 1px solid rgba(148, 163, 184, .12);
 }
 .contact-links a {
-  color: var(--text-3);
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  min-height: 42px;
+  padding: 0 .9rem;
+  border: 1px solid var(--line-1);
+  border-radius: var(--r-pill);
+  background: rgba(15, 23, 42, .5);
+  color: var(--text-2);
   font-size: var(--fs-xs);
-  border-bottom: 1px solid transparent;
-  transition: color var(--dur-fast), border-color var(--dur-fast);
+  font-weight: 500;
+  transition: color var(--dur-fast), border-color var(--dur-fast),
+              background var(--dur-fast), transform var(--dur) var(--ease);
 }
-.contact-links a:hover { color: var(--accent); border-bottom-color: rgba(56, 189, 248, .4); }
+.contact-links svg {
+  width: 15px; height: 15px;
+  flex: none;
+  fill: currentColor;
+  opacity: .75;
+  transition: opacity var(--dur-fast);
+}
 
 /* ---------- Toast ---------- */
 .toast {
