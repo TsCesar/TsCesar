@@ -324,8 +324,6 @@ Arcade-style Pong project developed in Python.
 
 </div>
 
-🐍 Activation: after uploading .github/workflows/snake.yml, run Actions → Generate contribution snake → Run workflow once. The animation will then load automatically from the output branch.
-
 <p align="center">
   <img width="100%" src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" alt="animated divider">
 </p>
